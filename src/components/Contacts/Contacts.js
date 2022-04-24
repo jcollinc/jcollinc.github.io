@@ -167,7 +167,7 @@ function Contacts() {
             style={{ backgroundColor: theme.secondary }}
         >
             <div className='contacts--container'>
-                <h1 style={{ color: theme.primary }}>Contacts</h1>
+                <h1 style={{ color: theme.primary }}>Contact + Socials</h1>
                 <div className='contacts-body'>
                     {/* <div className='contacts-form'>
                         <form onSubmit={handleContactForm}>
@@ -282,7 +282,7 @@ function Contacts() {
 
                     <div className='contacts-details'>
                         <a
-                            // href={`mailto:${contactsData.email}`}
+                            href={`mailto:${contactsData.email}`}
                             className='personal-details'
                         >
                             <div className={classes.detailsIcon}>
@@ -293,26 +293,40 @@ function Contacts() {
                             </p>
                         </a>
                         <a
-                            // href={`tel:${contactsData.phone}`}
+                            href={socialsData.github}
                             className='personal-details'
                         >
                             <div className={classes.detailsIcon}>
-                                <FiPhone />
+                                <FaGithub aria-label='GitHub' />
                             </div>
                             <p style={{ color: theme.tertiary }}>
-                                {contactsData.phone}
+                                github.com/jcollinc
                             </p>
                         </a>
-                        <div className='personal-details'>
+                        <a
+                            href={socialsData.linkedIn}
+                            className='personal-details'
+                        >
                             <div className={classes.detailsIcon}>
-                                <HiOutlineLocationMarker />
+                                <FaLinkedinIn aria-label='LinkedIn' />
                             </div>
                             <p style={{ color: theme.tertiary }}>
-                                {contactsData.address}
+                                linkedin.com/in/jon-collin-chinje/
                             </p>
-                        </div>
+                        </a>
+                        <a
+                            href={socialsData.medium}
+                            className='personal-details'
+                        >
+                            <div className={classes.detailsIcon}>
+                                <FaMediumM aria-label='Medium' />
+                            </div>
+                            <p style={{ color: theme.tertiary }}>
+                                medium.com/@j.chinje
+                            </p>
+                        </a>
 
-                        <div className='socialmedia-icons'>
+                        <div className='personal-details'>
                             {/* {socialsData.twitter && (
                                 <a
                                     href={socialsData.twitter}
@@ -323,26 +337,26 @@ function Contacts() {
                                     <FaTwitter aria-label='Twitter' />
                                 </a>
                             )} */}
-                            {socialsData.github && (
+                            {/* {socialsData.github && (
                                 <a
                                     href={socialsData.github}
                                     target='_blank'
                                     rel='noreferrer'
-                                    className={classes.socialIcon}
+                                    className={classes.detailsIcon}
                                 >
                                     <FaGithub aria-label='GitHub' />
                                 </a>
-                            )}
-                            {socialsData.linkedIn && (
+                            )} */}
+                            {/* {socialsData.linkedIn && (
                                 <a
                                     href={socialsData.linkedIn}
                                     target='_blank'
                                     rel='noreferrer'
-                                    className={classes.socialIcon}
+                                    className={classes.detailsIcon}
                                 >
                                     <FaLinkedinIn aria-label='LinkedIn' />
                                 </a>
-                            )}
+                            )} */}
                             {/* {socialsData.instagram && (
                                 <a
                                     href={socialsData.instagram}
@@ -353,7 +367,7 @@ function Contacts() {
                                     <FaInstagram aria-label='Instagram' />
                                 </a>
                             )}*/}
-                            {socialsData.medium && (
+                            {/* {socialsData.medium && (
                                 <a
                                     href={socialsData.medium}
                                     target='_blank'
@@ -362,7 +376,7 @@ function Contacts() {
                                 >
                                     <FaMediumM aria-label='Medium' />
                                 </a>
-                            )}
+                            )} */}
                             {/*
                             {socialsData.blogger && (
                                 <a

@@ -1,29 +1,28 @@
 export const blogData = [
     {
         id: 1,
-        title: 'Cloning Sportsjam.in',
-        description: 'My expeirence working on my first big project within the Masai Curriculum',
-        date: 'Dec 19, 2021',
-        image: 'https://miro.medium.com/max/875/1*R__cdn8L1gYGK1Tdqqyubg.png',
-        url: 'https://medium.com/@sreerag.rajan5/cloning-sportsjam-in-cd1c80c1b06b'
+        title: 'Here, There, or Everywhere: An Introduction to JavaScript Scope',
+        description: 'An introduction to JavaScript scope and why it matters',
+        date: 'March 9, 2022',
+        image: 'https://miro.medium.com/max/770/0*ELMulY2uUbMNldsX',
+        url: 'https://medium.com/@j.chinje/here-there-or-everywhere-an-introduction-to-javascript-scope-11c486670749'
     },
     {
         id: 2,
-        title: 'CLONING RELIANCE DIGITAL',
-        description: 'Experience of the second project.',
-        date: 'Jan 23, 2022',
-        image: 'https://miro.medium.com/max/875/1*nY9cUfzwtDaM6lGyvj4STg.png',
-        url: 'https://medium.com/@sreerag.rajan5/cloning-reliance-digital-439cd56d46a3'
+        title: 'Site Navigation with the useHistory() Hook',
+        description: 'A quick primer on using the useHistory() hook',
+        date: 'March 31, 2022',
+        image: 'https://miro.medium.com/max/1400/0*V0R9TnYKo50vN__-',
+        url: 'https://medium.com/@j.chinje/quick-guide-to-site-navigation-with-the-usehistory-hook-eceef7cbc6fa'
     },
     {
         id: 3,
-        title: 'Reliance Digital Clone (Part II)',
-        description: 'The experience of the third project, with a focus on leadership skills',
-        date: 'Feb 27, 2022',
-        image: 'https://miro.medium.com/max/875/1*qRNfRbuHCDC1ct0chLZoWA.png',
-        url: 'https://medium.com/@sreerag.rajan5/reliance-digital-clone-part-ii-57797eaf1ddf'
-    },
-    
+        title: 'A Useful Approach to Light / Dark Mode in your React App',
+        description: 'A tutorial on CSS custom properties',
+        date: 'April 21, 2022',
+        image: 'https://miro.medium.com/max/1400/0*1GA3G_rzIDhaKKeQ',
+        url: 'https://medium.com/@j.chinje/a-useful-approach-to-light-dark-mode-in-your-react-app-6d08ab6c5b4'
+    }, 
 ]
 
 

@@ -1,7 +1,7 @@
 import React, { useContext, useState } from 'react';
 import { NavHashLink as NavLink } from 'react-router-hash-link';
 import Fade from 'react-reveal/Fade';
-import { IoMenuSharp, IoHomeSharp } from 'react-icons/io5';
+import { IoMenuSharp, IoHomeSharp, IoSchoolSharp } from 'react-icons/io5';
 import { HiDocumentText } from 'react-icons/hi';
 import { BsFillGearFill } from 'react-icons/bs';
 import { MdPhone } from 'react-icons/md';
@@ -38,7 +38,7 @@ function Navbar() {
             transition: 'color 0.3s',
             position: "fixed",
             top:"30px",
-            right: "30px",
+            left: "30px",
             '&:hover': {
                 color: theme.primary,
             },
@@ -217,24 +217,6 @@ function Navbar() {
 
                         <Fade left>
                             <NavLink
-                                to='/#education'
-                                smooth={true}
-                                spy='true'
-                                duration={2000}
-                            >
-                                <div className={classes.drawerItem}>
-                                    <HiDocumentText
-                                        className={classes.drawerIcon}
-                                    />
-                                    <span className={classes.drawerLinks}>
-                                        Education
-                                    </span>
-                                </div>
-                            </NavLink>
-                        </Fade>
-
-                        <Fade left>
-                            <NavLink
                                 to='/#skills'
                                 smooth={true}
                                 spy='true'
@@ -250,7 +232,7 @@ function Navbar() {
                                 </div>
                             </NavLink>
                         </Fade>
-
+                        
                         <Fade left>
                             <NavLink
                                 to='/#projects'
@@ -264,6 +246,42 @@ function Navbar() {
                                     />
                                     <span className={classes.drawerLinks}>
                                         Projects
+                                    </span>
+                                </div>
+                            </NavLink>
+                        </Fade>
+
+                        <Fade left>
+                            <NavLink
+                                to='/#education'
+                                smooth={true}
+                                spy='true'
+                                duration={2000}
+                            >
+                                <div className={classes.drawerItem}>
+                                    <IoSchoolSharp
+                                        className={classes.drawerIcon}
+                                    />
+                                    <span className={classes.drawerLinks}>
+                                        Education
+                                    </span>
+                                </div>
+                            </NavLink>
+                        </Fade>
+
+                        <Fade left>
+                            <NavLink
+                                to='/#blog'
+                                smooth={true}
+                                spy='true'
+                                duration={2000}
+                            >
+                                <div className={classes.drawerItem}>
+                                    <HiDocumentText
+                                        className={classes.drawerIcon}
+                                    />
+                                    <span className={classes.drawerLinks}>
+                                        Blog
                                     </span>
                                 </div>
                             </NavLink>

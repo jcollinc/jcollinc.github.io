@@ -25,8 +25,9 @@ function Landing() {
             borderRadius: '30px',
             textTransform: 'inherit',
             textDecoration: 'none',
-            width: '150px',
+            width: '190px',
             fontSize: '1rem',
+            marginRight: '30px',
             fontWeight: '500',
             height: '50px',
             fontFamily: 'var(--primaryFont)',
@@ -172,7 +173,7 @@ function Landing() {
                                     rel='noreferrer'
                                 >
                                     <Button className={classes.resumeBtn}>
-                                        Download CV
+                                        Download Resume
                                     </Button>
                                 </a>
                             )}

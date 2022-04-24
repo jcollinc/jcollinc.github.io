@@ -11,48 +11,39 @@ import eight from '../assets/svg/projects/eight.svg'
 export const projectsData = [
     {
         id: 1,
-        projectName: 'History Through Movies',
-        projectDesc: 'This project seeks to explore whether the pedagogy of history can be improved with the visual media, particularly Cinema. The Website is intended to show movies that fit the bill. I have a fullstack role in this having built all of it.',
-        tags: ['Django', 'HTML' ,'CSS', 'Javascript'],
-        code: 'https://github.com/sreerag-rajan/historythroughmovies',
-        demo: 'https://historythroughmovies.pythonanywhere.com/',
-        image: "https://github.com/sreerag-rajan/historythroughmovies/raw/master/htclandingpage.png"
+        projectName: 'ToneBook',
+        projectDesc: 'This project seeks to provide musicians with an easy-to-use layout for organizing practice routines, with the ability to easily track progress, and create lesson plans all in one place. It is my first full stack application developed solo from start to finish, and third full stack app overall.',
+        tags: ['React', 'HTML' ,'CSS', 'Javascript', 'Ruby on Rails'],
+        code: 'https://github.com/jcollinc/capstone',
+        demo: 'https://drive.google.com/file/d/1dHfwBemxM1-i9kAVt7iT3IBUmrq7I7vS/view',
+        image: "https://scontent-iad3-1.xx.fbcdn.net/v/t1.15752-9/278908047_548158513359458_1212535711448942054_n.png?_nc_cat=104&ccb=1-5&_nc_sid=ae9488&_nc_ohc=Z41YPOEA0oQAX954Fb4&_nc_ht=scontent-iad3-1.xx&oh=03_AVL-QSfoULFc7L8I_6rOfHD47m7qizfU7DE9OqL9LMyVuw&oe=628B3C0D"
     },
     {
         id: 2,
-        projectName: 'Sportsjam.in Clone',
-        projectDesc: 'This is a clone of an e-commerce website sportsjam.in. My contribution to this project was the product catalogue page and its features, like sorting and filtering. The rest of the project was built by various members of the group',
-        tags: ['HTML', 'CSS','Javascript'],
-        code: 'https://github.com/sreerag-rajan/sportsjam-clone',
-        demo: 'https://practical-meninsky-36f305.netlify.app/',
-        image: "https://camo.githubusercontent.com/f9fbe30b577cff2fbf09af53fb3c1f12fcc10a771bf9459ed5af10bffab9e38b/68747470733a2f2f6d69726f2e6d656469756d2e636f6d2f6d61782f3837352f312a525f5f63646e384c316759474b3154647171797562672e706e67"
+        projectName: 'CraveLocal',
+        projectDesc: 'This is a clone for a meal ordering service. For our second fullstack application, my partner and I set out to expand our understanding of backend technologies; this was our first time using Rails, which allowed us to learn and implement authentication methods to increase the overall seurity of our app. ',
+        tags: ['React', 'HTML' ,'CSS', 'Javascript', 'Ruby on Rails'],
+        code: 'https://github.com/jcollinc/crave-local',
+        demo: 'https://c4.wallpaperflare.com/wallpaper/155/224/936/coming-coming-soon-sign-text-wallpaper-preview.jpg',
+        image: "https://scontent-iad3-1.xx.fbcdn.net/v/t1.15752-9/278277464_684903752725084_2578802868723815725_n.png?_nc_cat=108&ccb=1-5&_nc_sid=ae9488&_nc_ohc=WNygpTEQMzIAX-i8Bop&tn=QSIlHDFaoD8E0-Aj&_nc_ht=scontent-iad3-1.xx&oh=03_AVL7dPUTr4YWPFNgr9D2fV2IZ7oIZ7O2aZUm-ctYJYGxiQ&oe=628B38D6"
     },
     {
         id: 3,
-        projectName: 'Educative Clone',
-        projectDesc: 'This project is the clone of Educative.io. Built as part of Project week, my contributions include the home page(both with user and without user), course information page and checkout page. The rest of the pages and features were built by other members of my team',
-        tags: ['React', 'Material UI', 'Express', "MongoDB","NodeJS"],
-        code: 'https://github.com/sreerag-rajan/educative-clone',
-        demo: 'https://educative-clone.vercel.app/',
-        image: "https://user-images.githubusercontent.com/85482640/161571651-35ab8e4e-dc57-4834-bafc-9485766f5b8a.png"
+        projectName: 'Dotify',
+        projectDesc: 'This project is a Spotify clone, and is my first full stack aplication. It was built with React and Sinatra. My partner and I learned a lot about how the front and back ends coordinate, as well as the considerations to be made when approaching the development of each.',
+        tags: ['React', 'HTML' ,'CSS', 'Javascript', 'Ruby', 'Sinatra'],
+        code: 'https://github.com/jcollinc/Dotify',
+        demo: 'https://drive.google.com/file/d/1n0oQHW0tn96VGyffUHDvRd3yWWDJdKYv/view',
+        image: "https://scontent-iad3-1.xx.fbcdn.net/v/t1.15752-9/278366178_530182678510779_7321309932584804915_n.png?_nc_cat=104&ccb=1-5&_nc_sid=ae9488&_nc_ohc=2v4mmSZdvQ0AX8-wPGM&_nc_ht=scontent-iad3-1.xx&oh=03_AVJKExzL4bfTalHqqu-9sy0iPL3OU54uGrqjlVixK-0QnA&oe=628B7684"
     },
     {
         id: 4,
-        projectName: 'Reliance Digital Clone - Backend Integration',
-        projectDesc: 'This is the clone of reliancedigital.in. Features I worked on the Product Catalogue pages and also on some minor parts on other pages as well',
-        tags: ['EJS', 'Express', 'MongoDB', 'Node.js'],
-        code: 'https://github.com/sreerag-rajan/Reliance-Digital-Clone-U4-',
-        demo: 'https://reliance-digital-clone.herokuapp.com/',
-        image: "https://miro.medium.com/max/875/1*qRNfRbuHCDC1ct0chLZoWA.png"
-    },
-    {
-        id: 5,
-        projectName: 'Reliance Digital Clone - Frontend',
-        projectDesc: 'This project is the clone of Reliance Digital built as a part of a project week. It simulates the functionality of an e-commerce website from landing page to checkout. My contribution was the product catalog page arriving from the navbar, as well as leading the team.',
-        tags: ['HTML', 'CSS', 'Javascript'],
-        code: 'https://github.com/iamrituyadav/Reliance_digital',
-        demo: 'https://reliance-digital-clone.herokuapp.com/',
-        image: "https://miro.medium.com/max/875/1*qRNfRbuHCDC1ct0chLZoWA.png"
+        projectName: 'Study Room',
+        projectDesc: 'A message board created for classmates to collaborate on work, with a coffee ordering component; built using React. My partner and I learned about RESTful conventions and used json-server to act as back end for out React front end.',
+        tags: ['React', 'HTML' ,'CSS', 'Javascript'],
+        code: 'https://github.com/jcollinc/Study-Room',
+        demo: 'https://drive.google.com/file/d/1yLN6w_yeOXn62S0Qk6S1XhLSBIBBN_C6/view',
+        image: "https://scontent-iad3-1.xx.fbcdn.net/v/t1.15752-9/278139628_503982587873192_5127926746016566799_n.png?_nc_cat=104&ccb=1-5&_nc_sid=ae9488&_nc_ohc=DM7wAu8yVG0AX_S6eSD&_nc_ht=scontent-iad3-1.xx&oh=03_AVJ1eU1bVL3vzN_duuJrY5Avp9K-Zgib6qnWZJptWaibdw&oe=628B5B6C"
     },
     
 ]
