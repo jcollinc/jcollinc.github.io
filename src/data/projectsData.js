@@ -21,10 +21,10 @@ export const projectsData = [
     {
         id: 2,
         projectName: 'CraveLocal',
-        projectDesc: 'This is a clone for a meal ordering service. For our second fullstack application, my partner and I set out to expand our understanding of backend technologies; this was our first time using Rails, which allowed us to learn and implement authentication methods to increase the overall seurity of our app. ',
+        projectDesc: 'This is a clone for a meal ordering service. For our second fullstack application, my partner and I set out to expand our understanding of backend technologies; this was our first time using Rails, which allowed us to learn and implement authentication methods to increase the overall seurity of our app. (Live demo in the works)',
         tags: ['React', 'HTML' ,'CSS', 'Javascript', 'Ruby on Rails'],
         code: 'https://github.com/jcollinc/crave-local',
-        demo: 'https://c4.wallpaperflare.com/wallpaper/155/224/936/coming-coming-soon-sign-text-wallpaper-preview.jpg',
+        demo: '',
         image: "https://scontent-iad3-1.xx.fbcdn.net/v/t1.15752-9/278277464_684903752725084_2578802868723815725_n.png?_nc_cat=108&ccb=1-5&_nc_sid=ae9488&_nc_ohc=WNygpTEQMzIAX-i8Bop&tn=QSIlHDFaoD8E0-Aj&_nc_ht=scontent-iad3-1.xx&oh=03_AVL7dPUTr4YWPFNgr9D2fV2IZ7oIZ7O2aZUm-ctYJYGxiQ&oe=628B38D6"
     },
     {
