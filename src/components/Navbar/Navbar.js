@@ -40,7 +40,7 @@ function Navbar() {
             top:"30px",
             left: "30px",
             '&:hover': {
-                color: theme.primary,
+                color: theme.secondary,
             },
             [t.breakpoints.down('sm')]: {
                 fontSize: '2.5rem',
