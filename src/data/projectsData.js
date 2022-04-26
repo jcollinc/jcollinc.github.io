@@ -39,7 +39,7 @@ export const projectsData = [
     {
         id: 4,
         projectName: 'Study Room',
-        projectDesc: 'A message board created for classmates to collaborate on work, with a coffee ordering component; built using React. My partner and I learned about RESTful conventions and used json-server to act as back end for out React front end.',
+        projectDesc: 'A message board created for classmates to collaborate on work, with a coffee ordering component; built using React. My partner and I learned about RESTful conventions and used json-server to create a REST API for out React front end.',
         tags: ['React', 'HTML' ,'CSS', 'Javascript'],
         code: 'https://github.com/jcollinc/Study-Room',
         demo: 'https://drive.google.com/file/d/1yLN6w_yeOXn62S0Qk6S1XhLSBIBBN_C6/view',

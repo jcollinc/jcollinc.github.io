@@ -27,7 +27,6 @@ function Landing() {
             textDecoration: 'none',
             width: '190px',
             fontSize: '1rem',
-            marginRight: '30px',
             fontWeight: '500',
             height: '50px',
             fontFamily: 'var(--primaryFont)',
@@ -168,7 +167,7 @@ function Landing() {
                             {headerData.resumePdf && (
                                 <a
                                     href={headerData.resumePdf}
-                                    download='resume'
+                                    download='Jon-Collin Chinje Resume'
                                     target='_blank'
                                     rel='noreferrer'
                                 >
