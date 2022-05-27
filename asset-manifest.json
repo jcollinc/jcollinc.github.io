@@ -1,8 +1,8 @@
 {
   "files": {
     "main.css": "/static/css/main.fde98f4f.chunk.css",
-    "main.js": "/static/js/main.fd122e78.chunk.js",
-    "main.js.map": "/static/js/main.fd122e78.chunk.js.map",
+    "main.js": "/static/js/main.b1102760.chunk.js",
+    "main.js.map": "/static/js/main.b1102760.chunk.js.map",
     "runtime-main.js": "/static/js/runtime-main.c37d3184.js",
     "runtime-main.js.map": "/static/js/runtime-main.c37d3184.js.map",
     "static/css/2.19627560.chunk.css": "/static/css/2.19627560.chunk.css",
@@ -44,12 +44,14 @@
     "static/media/contactsRed.4953be02.svg": "/static/media/contactsRed.4953be02.svg",
     "static/media/contactsYellow.85ae6023.svg": "/static/media/contactsYellow.85ae6023.svg",
     "static/media/cplusplus.3398ef50.svg": "/static/media/cplusplus.3398ef50.svg",
+    "static/media/crave.8a11d284.png": "/static/media/crave.8a11d284.png",
     "static/media/csharp.8f35e178.svg": "/static/media/csharp.8f35e178.svg",
     "static/media/css.43b6f4bd.svg": "/static/media/css.43b6f4bd.svg",
     "static/media/dart.30bf58d8.svg": "/static/media/dart.30bf58d8.svg",
     "static/media/deno.96d4a63d.svg": "/static/media/deno.96d4a63d.svg",
     "static/media/django.d51a8aa4.svg": "/static/media/django.d51a8aa4.svg",
     "static/media/docker.a6221ab3.svg": "/static/media/docker.a6221ab3.svg",
+    "static/media/dot.ada1625d.png": "/static/media/dot.ada1625d.png",
     "static/media/eduBlack.ffbd9a23.svg": "/static/media/eduBlack.ffbd9a23.svg",
     "static/media/eduBlue.85730043.svg": "/static/media/eduBlue.85730043.svg",
     "static/media/eduGreen.7d2ee272.svg": "/static/media/eduGreen.7d2ee272.svg",
@@ -93,6 +95,7 @@
     "static/media/ionic.d2050eeb.svg": "/static/media/ionic.d2050eeb.svg",
     "static/media/java.d004bc17.svg": "/static/media/java.d004bc17.svg",
     "static/media/javascript.e9360603.svg": "/static/media/javascript.e9360603.svg",
+    "static/media/jonPF.8e4afb54.jpeg": "/static/media/jonPF.8e4afb54.jpeg",
     "static/media/julia.be076220.svg": "/static/media/julia.be076220.svg",
     "static/media/kotlin.4f592da4.svg": "/static/media/kotlin.4f592da4.svg",
     "static/media/lightroom.0e67d833.svg": "/static/media/lightroom.0e67d833.svg",
@@ -134,11 +137,13 @@
     "static/media/sketch.87c83552.svg": "/static/media/sketch.87c83552.svg",
     "static/media/slick-theme.css": "/static/media/slick.c94f7671.ttf",
     "static/media/strapi.ac0a6e67.svg": "/static/media/strapi.ac0a6e67.svg",
+    "static/media/study.85e5d87d.png": "/static/media/study.85e5d87d.png",
     "static/media/svelte.7b116dd5.svg": "/static/media/svelte.7b116dd5.svg",
     "static/media/swift.a030128a.svg": "/static/media/swift.a030128a.svg",
     "static/media/tailwind.254c4865.svg": "/static/media/tailwind.254c4865.svg",
     "static/media/tensorflow.6d6f2e37.svg": "/static/media/tensorflow.6d6f2e37.svg",
     "static/media/three.d4f751d1.svg": "/static/media/three.d4f751d1.svg",
+    "static/media/tone.b36a11fb.png": "/static/media/tone.b36a11fb.png",
     "static/media/two.721a0672.svg": "/static/media/two.721a0672.svg",
     "static/media/typescript.31f8fee8.svg": "/static/media/typescript.31f8fee8.svg",
     "static/media/unity.ad58069d.svg": "/static/media/unity.ad58069d.svg",
@@ -156,6 +161,6 @@
     "static/css/2.19627560.chunk.css",
     "static/js/2.5b971655.chunk.js",
     "static/css/main.fde98f4f.chunk.css",
-    "static/js/main.fd122e78.chunk.js"
+    "static/js/main.b1102760.chunk.js"
   ]
 }
