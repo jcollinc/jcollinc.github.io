@@ -6,7 +6,10 @@ import five from '../assets/svg/projects/five.svg'
 import six from '../assets/svg/projects/six.svg'
 import seven from '../assets/svg/projects/seven.svg'
 import eight from '../assets/svg/projects/eight.svg'
-
+import tone from '../assets/png/tone.png'
+import crave from '../assets/png/crave.png'
+import dot from '../assets/png/dot.png'
+import study from '../assets/png/study.png'
 
 export const projectsData = [
     {
@@ -16,7 +19,7 @@ export const projectsData = [
         tags: ['React', 'HTML' ,'CSS', 'Javascript', 'Ruby on Rails'],
         code: 'https://github.com/jcollinc/capstone',
         demo: 'https://www.youtube.com/watch?v=lY9g-pIvGqk',
-        image: "https://scontent-iad3-1.xx.fbcdn.net/v/t1.15752-9/278908047_548158513359458_1212535711448942054_n.png?_nc_cat=104&ccb=1-5&_nc_sid=ae9488&_nc_ohc=Z41YPOEA0oQAX954Fb4&_nc_ht=scontent-iad3-1.xx&oh=03_AVL-QSfoULFc7L8I_6rOfHD47m7qizfU7DE9OqL9LMyVuw&oe=628B3C0D"
+        image: tone
     },
     {
         id: 2,
@@ -25,7 +28,7 @@ export const projectsData = [
         tags: ['React', 'HTML' ,'CSS', 'Javascript', 'Ruby on Rails'],
         code: 'https://github.com/jcollinc/crave-local',
         demo: '',
-        image: "https://scontent-iad3-1.xx.fbcdn.net/v/t1.15752-9/278277464_684903752725084_2578802868723815725_n.png?_nc_cat=108&ccb=1-5&_nc_sid=ae9488&_nc_ohc=WNygpTEQMzIAX-i8Bop&tn=QSIlHDFaoD8E0-Aj&_nc_ht=scontent-iad3-1.xx&oh=03_AVL7dPUTr4YWPFNgr9D2fV2IZ7oIZ7O2aZUm-ctYJYGxiQ&oe=628B38D6"
+        image: crave
     },
     {
         id: 3,
@@ -34,7 +37,7 @@ export const projectsData = [
         tags: ['React', 'HTML' ,'CSS', 'Javascript', 'Ruby', 'Sinatra'],
         code: 'https://github.com/jcollinc/Dotify',
         demo: 'https://www.youtube.com/watch?v=PeQ3-VH7qQ4',
-        image: "https://scontent-iad3-1.xx.fbcdn.net/v/t1.15752-9/278366178_530182678510779_7321309932584804915_n.png?_nc_cat=104&ccb=1-5&_nc_sid=ae9488&_nc_ohc=2v4mmSZdvQ0AX8-wPGM&_nc_ht=scontent-iad3-1.xx&oh=03_AVJKExzL4bfTalHqqu-9sy0iPL3OU54uGrqjlVixK-0QnA&oe=628B7684"
+        image: dot
     },
     {
         id: 4,
@@ -43,7 +46,7 @@ export const projectsData = [
         tags: ['React', 'HTML' ,'CSS', 'Javascript'],
         code: 'https://github.com/jcollinc/Study-Room',
         demo: 'https://www.youtube.com/watch?v=Xx0XEUWkUIY',
-        image: "https://scontent-iad3-1.xx.fbcdn.net/v/t1.15752-9/278139628_503982587873192_5127926746016566799_n.png?_nc_cat=104&ccb=1-5&_nc_sid=ae9488&_nc_ohc=DM7wAu8yVG0AX_S6eSD&_nc_ht=scontent-iad3-1.xx&oh=03_AVJ1eU1bVL3vzN_duuJrY5Avp9K-Zgib6qnWZJptWaibdw&oe=628B5B6C"
+        image: study
     },
     
 ]
