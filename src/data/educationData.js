@@ -2,7 +2,7 @@ export const educationData = [
     {
         id: 1,
         institution: 'Flatiron School',
-        course: 'Software Engineering',
+        course: 'Software Engineering Certificate',
         startYear: '2022',
         endYear: '2022'
     },
