@@ -4,7 +4,7 @@ import jonPF from '../assets/png/jonPF.jpeg'
 export const headerData = {
     name: 'Jon-Collin Chinje',
     title: "",
-    desciption:"Welcome to my portfolio. Please scroll on to learn a little about me, and see what I've been working on. Links below if you'd like to view my resume, or get in touch!",
+    desciption:"Welcome to my software engineering portfolio. I'm excited to showcase my experience, skills, and projects. Take a look around to learn more about me and my work. If you're interested, you can also view my resume or contact me directly through the links provided. I'm looking forward to connecting with you!",
     image: jonPF,
     resumePdf: resume
 }

@@ -66,8 +66,12 @@ function Projects() {
                                 />
                             ))}
                         </div> 
+                        {/* Below code adds a "View All" button for projects; 
+                            commenting it out as all projects currently fit on main page.
+                            That said, please (please) don't forget to uncomment when that is no longer the case.
+                            You've been briefed, future Jon.  
 
-                        {projectsData.length > 3 && (
+                            {projectsData.length > 3 && (
                             <div className="projects--viewAll">
                                 <Link to="/projects">
                                     <button className={classes.viewAllBtn}>
@@ -76,7 +80,7 @@ function Projects() {
                                     </button>
                                 </Link>
                             </div>
-                        )}
+                        )} */}
                     </div>
                 </div>
             )}
