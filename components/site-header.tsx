@@ -32,7 +32,7 @@ export function SiteHeader() {
             href={links.resume}
             className="hidden rounded-full border border-border px-4 py-2 text-sm font-semibold text-foreground transition hover:border-accent hover:text-accent sm:inline-flex"
           >
-            Resume
+            Résumé
           </Link>
         </div>
       </div>

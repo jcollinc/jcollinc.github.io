@@ -10,12 +10,13 @@ export function ThemeToggle() {
   const [mounted, setMounted] = useState(false);
 
   useEffect(() => {
+    // eslint-disable-next-line react-hooks/set-state-in-effect
     setMounted(true);
   }, []);
 
   if (!mounted) {
     return (
-      <Button variant="ghost" size="sm" aria-label="Toggle theme" className="h-10 w-10 rounded-full">
+      <Button variant="ghost" size="sm" aria-label="Toggle theme" className="h-12 w-12 rounded-full">
         <span className="sr-only">Loading theme preference</span>
       </Button>
     );
@@ -28,10 +29,10 @@ export function ThemeToggle() {
       variant="ghost"
       size="sm"
       aria-label="Toggle theme"
-      className="h-10 w-10 rounded-full"
+      className="h-12 w-12 rounded-full"
       onClick={() => setTheme(isDark ? 'light' : 'dark')}
     >
-      {isDark ? <Sun className="h-5 w-5" aria-hidden /> : <Moon className="h-5 w-5" aria-hidden />}
+      {isDark ? <Sun className="h-6 w-6" aria-hidden /> : <Moon className="h-6 w-6" aria-hidden />}
     </Button>
   );
 }

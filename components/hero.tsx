@@ -30,12 +30,6 @@ export function Hero() {
             {hero.ctaPrimary.label}
             <ArrowUpRight className="h-4 w-4" aria-hidden />
           </Link>
-          <Link
-            href={hero.ctaSecondary.href}
-            className="inline-flex items-center gap-2 rounded-full border border-border px-6 py-3 text-sm font-semibold text-foreground transition hover:border-accent hover:text-accent"
-          >
-            {hero.ctaSecondary.label}
-          </Link>
         </div>
       </div>
       <div className="relative hidden sm:block">
