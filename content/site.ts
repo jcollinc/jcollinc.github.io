@@ -37,10 +37,10 @@ export const hero = {
 export const about = {
   title: "Salut, I'm Jon-Collin",
   body: [
-    "I'm mostly driven by dissatisfaction. Persistent, unshakeable, and intense dissatisfaction; with the portrait I hung yesterday that’s a little off-center, with today's new hit single where backing vocal three is more than a touch too loud, with systems that work but aren't beautiful, with New York summers that last just a little bit too long...",
+    "I'm mostly driven by dissatisfaction. Dissatisfaction with the portrait I hung yesterday that’s a little off-center, with recordings where the mix isn't quite right, with systems that work but aren't beautiful, with New York summers that last just a little bit too long...",
     "Fortunately, most of these I can fix. My current project is a weather machine.",
-    "I’ve trained my eye for both detail and design, and somewhere along the way, learned to translate complex ideas into dependable, people-centric tools. Lately I’ve been building PayTogether, a phoenix born (I don’t mind saying it) from my dissatisfaction with Splitwise. I like my app more because it saves the nickel-and-diming for Sunday brunch.",
-    "When I’m not working, writing code, or practicing stand-up, I’m probably playing guitar, taking a wrong turn, or enjoying a perfectly pulled espresso shot (on my machine, it's 22.4 grams). These rituals keep me sane, and while I’d love to claim they teach me something profound about design or engineering, here's the truth: I already knew all that stuff."
+    "I’ve trained my eye for both detail and design, and somewhere along the way, learned to translate complex ideas into dependable, people-centric tools. Lately I’ve been building PayTogether, a phoenix born (I don’t mind saying it) from my dissatisfaction with Splitwise.",
+    "When I’m not working, I’m probably playing guitar, taking a wrong turn, or learning yet another way to brew coffee."
   ]
 };
 
@@ -154,11 +154,9 @@ export const skills = {
     'GraphQL',
     'AWS',
     'PostgreSQL',
-    'Tailwind CSS',
-    'Jest'
+    'Tailwind CSS'
   ],
   values: [
-    'Clarity over cleverness (really!)',
     'Empathy for teammates and users',
     'Accessibility is non-negotiable',
     'Continuous delivery of small wins',
