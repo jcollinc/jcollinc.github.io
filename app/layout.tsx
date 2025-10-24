@@ -9,26 +9,10 @@ const sans = Inter({ subsets: ['latin'], variable: '--font-sans' });
 
 export const metadata: Metadata = {
   metadataBase: new URL('https://jon-chinje.com'),
-  title: {
-    default: 'Jon-Collin Chinje · Software Engineer',
-    template: '%s · Jon-Collin Chinje'
-  },
-  description:
-    "Portfolio of Jon-Collin Chinje, a software engineer crafting reliable, human-centered web experiences with JavaScript and cloud-first thinking.",
-  openGraph: {
-    title: 'Jon-Collin Chinje · Software Engineer',
-    description:
-      'Portfolio of Jon-Collin Chinje, a software engineer crafting reliable, human-centered web experiences with JavaScript and cloud-first thinking.',
-    url: 'https://jon-chinje.com',
-    siteName: 'Jon-Collin Chinje',
-    locale: 'en_US',
-    type: 'website'
-  },
-  twitter: {
-    card: 'summary_large_image',
-    title: 'Jon-Collin Chinje · Software Engineer',
-    description:
-      'Portfolio of Jon-Collin Chinje, a software engineer crafting reliable, human-centered web experiences with JavaScript and cloud-first thinking.'
+  title: 'Jon-Collin Chinje',
+  robots: {
+    index: false,
+    follow: false
   }
 };
 
