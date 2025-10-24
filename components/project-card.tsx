@@ -16,8 +16,8 @@ interface ProjectCardProps {
 export function ProjectCard({ name, description, impact, tags, demo, code, image }: ProjectCardProps) {
   return (
     <article className="group overflow-hidden rounded-3xl border border-border/60 bg-card/70 shadow-soft transition hover:-translate-y-1 hover:shadow-xl">
-      <div className="relative aspect-[4/3]">
-        <Image src={image} alt={name} fill className="object-cover transition duration-500 group-hover:scale-105" />
+      <div className="relative aspect-[4/3] bg-muted/30">
+        <Image src={image} alt={name} fill className="object-contain p-4 transition duration-500 group-hover:scale-105" />
       </div>
       <div className="space-y-4 px-6 py-6">
         <div className="space-y-2">

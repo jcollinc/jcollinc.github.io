@@ -6,7 +6,6 @@ import { Timeline } from '@/components/timeline';
 import { ProjectCard } from '@/components/project-card';
 import { WritingCard } from '@/components/writing-card';
 import { SkillsGrid } from '@/components/skills-grid';
-import { ContactCard } from '@/components/contact-card';
 import { SiteHeader } from '@/components/site-header';
 import { SiteFooter } from '@/components/site-footer';
 import { education, experience, projects, writing } from '@/content/site';
@@ -14,24 +13,12 @@ import { education, experience, projects, writing } from '@/content/site';
 export default function Home() {
   const experienceTimeline = experience.map((item) => ({
     title: item.role,
-    subtitle: item.company,
-    period: item.end ? `${item.start} – ${item.end}` : `${item.start} – present`,
-    details: (
-      <ul className="space-y-2">
-        {item.highlights.map((highlight) => (
-          <li key={highlight} className="flex items-start gap-3 text-sm text-muted-foreground">
-            <span className="mt-1 h-2 w-2 rounded-full bg-accent/70" />
-            <span>{highlight}</span>
-          </li>
-        ))}
-      </ul>
-    )
+    subtitle: item.company
   }));
 
   const educationTimeline = education.map((item) => ({
     title: item.institution,
-    subtitle: item.program,
-    period: `${item.start} – ${item.end}`
+    subtitle: item.program
   }));
 
   return (
@@ -47,7 +34,7 @@ export default function Home() {
           id="experience"
           eyebrow="Journey"
           title="Experience and education"
-          description="A snapshot of programs and fellowships that sharpened my engineering craft." 
+          description="A snapshot of programs and fellowships that have led me here, to this very moment." 
         >
           <div className="grid gap-12 lg:grid-cols-2">
             <div className="space-y-6">
@@ -63,8 +50,8 @@ export default function Home() {
         <Section
           id="projects"
           eyebrow="Selected Work"
-          title="Projects that balance craft and impact"
-          description="I love working end-to-end: asking better questions, prototyping quickly, and iterating toward polished experiences."
+          title="Projects I don't mind sharing"
+          description="There are so many others that I do mind sharing"
         >
           <div className="grid gap-8 md:grid-cols-2">
             {projects.map((project) => (
@@ -75,8 +62,8 @@ export default function Home() {
         <Section
           id="writing"
           eyebrow="Writing"
-          title="Notes on engineering, learning, and community"
-          description="Writing keeps my thinking honest. These essays distill what I learn while pairing with teammates, coaching mentees, and shipping features."
+          title="Notes on things I've found interesting"
+          description="I wrote these because I had to as part of my bootcamp. But I still like them!"
         >
           <div className="grid gap-6 md:grid-cols-3">
             {writing.map((entry) => (
@@ -84,7 +71,6 @@ export default function Home() {
             ))}
           </div>
         </Section>
-        <ContactCard />
       </main>
       <SiteFooter />
     </Fragment>

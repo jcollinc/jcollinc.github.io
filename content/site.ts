@@ -15,9 +15,9 @@ export const links = {
 };
 
 export const hero = {
-  headline: 'Shipping accessible products with curiosity and care.',
+  headline: 'Building things for myself that are hopefully useful for other people too',
   subheadline:
-    "I'm a software engineer who loves untangling complexity – from tone generation apps for musicians to cloud-first experiences at AWS.",
+    "It's a perfect match: I like building things and I like delighting folks",
   heroImage: '/images/jon-collin.jpeg',
   bullets: [
     'Full-stack engineer with a focus on TypeScript and React',
@@ -35,54 +35,61 @@ export const hero = {
 };
 
 export const about = {
-  title: "Hi, I'm Jon-Collin",
+  title: "Salut, I'm Jon-Collin",
   body: [
-    "I came to engineering through a love of music, language, and the systems that bring them to life. Flatiron School and the Major League Hacking Open Source Fellowship sharpened my ability to learn fast, communicate clearly, and deliver dependable software.",
-    "Most recently I partnered with teams at Amazon Web Services to explore how developers adopt new tooling. The work taught me how to craft experiments, listen for signal, and iterate without losing sight of the humans involved.",
-    "Outside of code you'll find me practicing trumpet, taking photos around New York, or experimenting with new coffee beans. These creative routines keep my sense of play alive and make me a better collaborator."
+    "I'm mostly driven by dissatisfaction. Persistent, unshakeable, and intense dissatisfaction; with the portrait I hung yesterday that’s a little off-center, with today's new hit single where backing vocal three is more than a touch too loud, with systems that work but aren't beautiful, with New York summers that last just a little bit too long...",
+    "Fortunately, most of these I can fix. My current project is a weather machine.",
+    "I’ve trained my eye for both detail and design, and somewhere along the way, learned to translate complex ideas into dependable, people-centric tools. Lately I’ve been building PayTogether, a phoenix born (I don’t mind saying it) from my dissatisfaction with Splitwise. I like my app more because it saves the nickel-and-diming for Sunday brunch.",
+    "When I’m not working, writing code, or practicing stand-up, I’m probably playing guitar, taking a wrong turn, or enjoying a perfectly pulled espresso shot (on my machine, it's 22.4 grams). These rituals keep me sane, and while I’d love to claim they teach me something profound about design or engineering, here's the truth: I already knew all that stuff."
   ]
 };
 
 export const experience = [
   {
+    company: 'Droit',
+    role: 'Knowledge Engineer'
+  },
+  {
     company: 'Amazon Web Services',
-    role: 'Software Engineering Fellow',
-    start: '2022',
-    end: '2022',
-    highlights: [
-      'Paired with AWS maintainers to evaluate developer workflows for open-source tooling.',
-      'Built feedback dashboards that surfaced actionable insights for product teams.',
-      'Facilitated weekly demos and retrospectives to align fellows around shared learnings.'
-    ]
+    role: 'Software Engineer Fellow'
+  },
+  {
+    company: 'YRCI',
+    role: 'Documentation and QA Analyst'
   }
 ];
 
 export const education = [
   {
     institution: 'Major League Hacking',
-    program: 'Open Source Fellowship',
-    start: '2022',
-    end: '2022'
+    program: 'Open Source Fellowship'
   },
   {
     institution: 'Flatiron School',
-    program: 'Software Engineering Bootcamp',
-    start: '2022',
-    end: '2022'
+    program: 'Software Engineering Bootcamp'
   },
   {
     institution: 'George Mason University',
-    program: 'B.S. Economics',
-    start: '2012',
-    end: '2017'
+    program: 'B.S. Economics'
   }
 ];
 
 export const projects = [
   {
+    name: 'PayTogether',
+    description:
+      'Bill-splitting and expense tracking app that facilitates managing group finances.',
+    impact:
+      'Currently in private beta. Features smart settle-up suggestions, spending analytics, and customizable themes to help groups stay on top of shared expenses.',
+    tags: ['React', 'TypeScript', 'Next.js', 'PostgreSQL'],
+    code: '',
+    demo: 'https://paytogether.io',
+    image: '/projects/paytogether.png'
+  },
+  {
     name: 'ToneBook',
     description:
-      'Practice companion for brass musicians featuring structured routines, lesson planning, and progress tracking.',
+      'Practice companion for musicians featuring structured routines, lesson planning, and progress tracking.',
     impact:
       'Improves practice consistency by translating music pedagogy into actionable daily habits.',
     tags: ['React', 'Ruby on Rails', 'PostgreSQL'],
@@ -110,16 +117,6 @@ export const projects = [
     code: 'https://github.com/jcollinc/Dotify',
     demo: 'https://www.youtube.com/watch?v=PeQ3-VH7qQ4',
     image: '/projects/dotify.png'
-  },
-  {
-    name: 'Study Room',
-    description:
-      'Community message board with a virtual coffee bar to help classmates stay connected.',
-    impact: 'Explored REST conventions and front-end state patterns using a JSON Server backend.',
-    tags: ['React', 'REST APIs', 'State Management'],
-    code: 'https://github.com/jcollinc/Study-Room',
-    demo: 'https://www.youtube.com/watch?v=Xx0XEUWkUIY',
-    image: '/projects/study-room.png'
   }
 ];
 
@@ -147,10 +144,13 @@ export const writing = [
 export const skills = {
   toolkit: [
     'TypeScript',
+    'JavaScript',
+    'Python',
     'React',
     'Next.js',
     'Node.js',
     'Ruby on Rails',
+    'SQL',
     'GraphQL',
     'AWS',
     'PostgreSQL',
@@ -158,7 +158,7 @@ export const skills = {
     'Jest'
   ],
   values: [
-    'Clarity over cleverness',
+    'Clarity over cleverness (really!)',
     'Empathy for teammates and users',
     'Accessibility is non-negotiable',
     'Continuous delivery of small wins',
@@ -166,9 +166,3 @@ export const skills = {
   ]
 };
 
-export const contact = {
-  headline: "Let’s collaborate.",
-  description:
-    'I love partnering with teams who care about reliable, human-centered products. Tell me about your project, or just share a great song recommendation.',
-  email: links.email
-};

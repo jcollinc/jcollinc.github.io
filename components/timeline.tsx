@@ -3,7 +3,7 @@ import type { ReactNode } from 'react';
 interface TimelineItemProps {
   title: string;
   subtitle: string;
-  period: string;
+  period?: string;
   details?: ReactNode;
 }
 
@@ -16,7 +16,7 @@ export function Timeline({ items }: { items: TimelineItemProps[] }) {
           <div className="space-y-2">
             <div className="flex flex-col gap-1 sm:flex-row sm:items-baseline sm:justify-between">
               <h3 className="text-lg font-semibold text-foreground">{item.title}</h3>
-              <span className="text-sm font-medium text-muted-foreground">{item.period}</span>
+              {item.period && <span className="text-sm font-medium text-muted-foreground">{item.period}</span>}
             </div>
             <p className="text-sm text-muted-foreground">{item.subtitle}</p>
             {item.details ? <div className="space-y-2 text-sm text-muted-foreground">{item.details}</div> : null}
