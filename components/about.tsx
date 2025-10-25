@@ -8,8 +8,12 @@ export function About() {
         <h2 className="text-3xl font-semibold text-foreground sm:text-4xl">{about.title}</h2>
       </div>
       <div className="space-y-4 text-base text-muted-foreground">
-        {about.body.map((paragraph) => (
-          <p key={paragraph}>{paragraph}</p>
+        {about.body.map((paragraph, index) => (
+          <p
+            // eslint-disable-next-line react/no-danger
+            dangerouslySetInnerHTML={{ __html: paragraph }}
+            key={index}
+          />
         ))}
       </div>
     </div>

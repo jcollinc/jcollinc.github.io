@@ -15,7 +15,7 @@ export const links = {
 };
 
 export const hero = {
-  headline: 'Building things for myself that are hopefully useful for other people too',
+  headline: 'Building things for myself that hopefully are useful for other people too',
   subheadline:
     "It's a perfect match: I like building things and I like delighting folks",
   heroImage: '/images/jon-collin.jpeg',
@@ -37,10 +37,10 @@ export const hero = {
 export const about = {
   title: "Salut, I'm Jon-Collin",
   body: [
-    "I'm mostly driven by dissatisfaction. Dissatisfaction with the portrait I hung yesterday that’s a little off-center, with recordings where the mix isn't quite right, with systems that work but aren't beautiful, with New York summers that last just a little bit too long...",
-    "Fortunately, most of these I can fix. My current project is a weather machine.",
-    "I’ve trained my eye for both detail and design, and somewhere along the way, learned to translate complex ideas into dependable, people-centric tools. Lately I’ve been building PayTogether, a phoenix born (I don’t mind saying it) from my dissatisfaction with Splitwise.",
-    "When I’m not working, I’m probably playing guitar, taking a wrong turn, or learning yet another way to brew coffee."
+    "I'm mostly driven by dissatisfaction. Dissatisfaction with the portrait I'm currently staring at that I'm now noticing is a little bit off center, with recordings where the mix isn't quite right, with systems that work but aren't beautiful, with humid New York summers that last far too long...",
+    "Fortunately, most of these I can fix. My current project is a city-scale dehumidifier. More on that <a href=\"https://www.youtube.com/watch?v=dQw4w9WgXcQ\" target=\"_blank\" rel=\"noreferrer\" class=\"underline decoration-solid decoration-accent/60 underline-offset-4 transition hover:text-foreground\">here</a>.",
+    "I’ve trained my eye for both detail and design, and delight in translating complex ideas into dependable, people-centric tools. Lately I’ve been building the expense-splitting app, PayTogether, which I endeavor to make a reflection of this.",
+    "When I’m not working, I’m probably playing guitar, taking a wrong turn, or learning another way to brew coffee (there are lots!)."
   ]
 };
 
@@ -50,7 +50,7 @@ export const experience = [
     role: 'Knowledge Engineer'
   },
   {
-    company: 'Amazon Web Services',
+    company: 'Amazon Web Services (via MLH)',
     role: 'Software Engineer Fellow'
   },
   {
