@@ -6,6 +6,10 @@ export const meta = {
     'I build resilient, human-centered web experiences with a bias toward clarity, iteration, and long-term maintainability.'
 };
 
+export const placeholders = {
+  cityDehumidifierLink: '{{cityDehumidifierLink}}'
+};
+
 export const links = {
   email: 'j.chinje@gmail.com',
   github: 'https://github.com/jcollinc',
@@ -37,10 +41,10 @@ export const hero = {
 export const about = {
   title: "Salut, I'm Jon-Collin",
   body: [
-    "I'm mostly driven by dissatisfaction. Dissatisfaction with the portrait I'm currently staring at that I'm now noticing is a little bit off center, with recordings where the mix isn't quite right, with systems that work but aren't beautiful, with humid New York summers that last far too long...",
-    "Fortunately, most of these I can fix. My current project is a city-scale dehumidifier. More on that <a href=\"https://www.youtube.com/watch?v=dQw4w9WgXcQ\" target=\"_blank\" rel=\"noreferrer\" class=\"underline decoration-solid decoration-accent/60 underline-offset-4 transition hover:text-foreground\">here</a>.",
-    "I’ve trained my eye for both detail and design, and delight in translating complex ideas into dependable, people-centric tools. Lately I’ve been building the expense-splitting app, PayTogether, which I endeavor to make a reflection of this.",
-    "When I’m not working, I’m probably playing guitar, taking a wrong turn, or learning another way to brew coffee (there are lots!)."
+    "I'm mostly driven by dissatisfaction. Dissatisfaction with the portrait I'm currently staring at that I'm now noticing is a little bit off center, with audio recordings where the mix isn't quite right, with systems that work but aren't optimal, with sweltering New York summers that last far too long...",
+    `Fortunately, most of these I can fix. My current project is a city-scale dehumidifier. More on that effort ${placeholders.cityDehumidifierLink}.`,
+    "I’ve trained my eye for both detail and design, and delight in translating complex ideas into dependable, people-centric tools. Lately I’ve been building the expense-splitting app, PayTogether, which I hope serves as a reflection of this.",
+    "When I’m not working, I’m probably playing guitar, taking a wrong turn, or learning yet another way to brew a cup of coffee (there are lots - perhaps too many)."
   ]
 };
 

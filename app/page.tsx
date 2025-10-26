@@ -51,7 +51,7 @@ export default function Home() {
           id="projects"
           eyebrow="Selected Work"
           title="Projects I don't mind sharing"
-          description="Alas, not all of them."
+          description="Very much not all of them, alas."
         >
           <div className="grid gap-8 md:grid-cols-2">
             {projects.map((project) => (
@@ -63,7 +63,7 @@ export default function Home() {
           id="writing"
           eyebrow="Writing"
           title="Notes on things I've found interesting"
-          description="I don't blog very often, but when I do..."
+          description="I don't write very often, but when I do..."
         >
           <div className="grid gap-6 md:grid-cols-3">
             {writing.map((entry) => (
