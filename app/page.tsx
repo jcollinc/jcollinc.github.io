@@ -34,7 +34,7 @@ export default function Home() {
           id="experience"
           eyebrow="Journey"
           title="Experience and education"
-          description="A snapshot of programs and fellowships that have led me here, to this very moment." 
+          description="A snapshot of experiences that have led me here, to this very moment." 
         >
           <div className="grid gap-12 lg:grid-cols-2">
             <div className="space-y-6">
