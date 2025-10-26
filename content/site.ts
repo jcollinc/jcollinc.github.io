@@ -39,7 +39,7 @@ export const hero = {
 };
 
 export const about = {
-  title: "Salut, I'm Jon-Collin",
+  title: "Hello, I'm Jon-Collin",
   body: [
     "I'm mostly driven by dissatisfaction. Dissatisfaction with the portrait I'm currently staring at that I'm now noticing is a little bit off center, with audio recordings where the mix isn't quite right, with systems that work but aren't optimal, with sweltering New York summers that last far too long...",
     `Fortunately, most of these I can fix. My current project is a city-scale dehumidifier. More on that effort ${placeholders.cityDehumidifierLink}.`,
