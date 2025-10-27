@@ -6,10 +6,6 @@ export const meta = {
     'I build resilient, human-centered web experiences with a bias toward clarity, iteration, and long-term maintainability.'
 };
 
-export const placeholders = {
-  cityDehumidifierLink: '{{cityDehumidifierLink}}'
-};
-
 export const links = {
   email: 'j.chinje@gmail.com',
   github: 'https://github.com/jcollinc',
@@ -21,7 +17,7 @@ export const links = {
 export const hero = {
   headline: 'Building things for myself that hopefully are useful for other people too',
   subheadline:
-    "It's a perfect match: I like building things and I like delighting folks",
+    "I like building things and I like delighting folks",
   heroImage: '/images/jon-collin.jpeg',
   bullets: [
     'Software engineer with a focus on TypeScript and React',
@@ -42,9 +38,9 @@ export const about = {
   title: "Hello, I'm Jon-Collin",
   body: [
     "I'm mostly driven by dissatisfaction. Dissatisfaction with the portrait I'm currently staring at that I'm now noticing is a little bit off center, with audio recordings where the mix isn't quite right, with systems that work but aren't optimal, with sweltering New York summers that last far too long...",
-    `Fortunately, most of these I can fix. My current project is a city-scale dehumidifier. More on that effort ${placeholders.cityDehumidifierLink}.`,
+    "Fortunately, most of these I can fix. My current project is a city-scale dehumidifier.",
     "I’ve trained my eye for both detail and design, and delight in translating complex ideas into dependable, people-centric tools. Lately I’ve been building the expense-splitting app, PayTogether, which I hope serves as a reflection of this.",
-    "When I’m not working, I’m probably playing guitar, taking a wrong turn, or learning yet another way to brew a cup of coffee (there are lots - perhaps too many)."
+    "When I’m not working, I’m probably playing guitar, taking a wrong turn, or learning yet another way to brew a cup of coffee (there are too many)."
   ]
 };
 
