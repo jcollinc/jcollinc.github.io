@@ -34,13 +34,13 @@ export function Hero() {
       </div>
       <div className="relative hidden sm:block">
         <div className="absolute inset-0 -z-10 rounded-3xl bg-gradient-to-br from-accent/20 via-transparent to-accent/10 blur-3xl" aria-hidden />
-        <div className="overflow-hidden rounded-3xl border border-border/70 bg-card/70 shadow-soft backdrop-blur">
+        <div className="overflow-hidden rounded-3xl border border-border/70 bg-card/70 shadow-soft backdrop-blur p-3">
           <Image
             src={hero.heroImage}
             alt={`${meta.name} smiling`}
             width={640}
             height={800}
-            className="h-full w-full object-cover"
+            className="h-full w-full object-cover rounded-3xl"
             priority
           />
         </div>
