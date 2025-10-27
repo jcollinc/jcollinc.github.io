@@ -24,7 +24,7 @@ export const hero = {
     "It's a perfect match: I like building things and I like delighting folks",
   heroImage: '/images/jon-collin.jpeg',
   bullets: [
-    'Full-stack engineer with a focus on TypeScript and React',
+    'Software engineer with a focus on TypeScript and React',
     'AWS Open Source Fellow who enjoys collaborative problem solving',
     'Forever student of good UX, clean architecture, and joyful tooling'
   ],
