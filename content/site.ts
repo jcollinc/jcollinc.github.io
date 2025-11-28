@@ -82,8 +82,9 @@ export const projects = [
     impact:
       'Currently in private beta. Features smart settle-up suggestions, spending analytics, receipt scanning, and customizable themes to help groups stay on top of shared expenses.',
     tags: ['React', 'TypeScript', 'Next.js', 'PostgreSQL'],
-    code: '',
     demo: 'https://paytogether.io',
+    demoLabel: 'Learn more',
+    app: 'https://app.paytogether.io',
     image: '/projects/paytogether.png'
   },
   {

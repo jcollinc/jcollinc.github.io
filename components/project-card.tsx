@@ -1,6 +1,6 @@
 import Image from 'next/image';
 import Link from 'next/link';
-import { ArrowUpRight, Github } from 'lucide-react';
+import { ArrowUpRight, Github, ExternalLink } from 'lucide-react';
 import type { ComponentProps } from 'react';
 
 interface ProjectCardProps {
@@ -9,11 +9,13 @@ interface ProjectCardProps {
   impact: string;
   tags: string[];
   demo: string;
-  code: string;
+  demoLabel?: string;
+  code?: string;
+  app?: string;
   image: ComponentProps<typeof Image>['src'];
 }
 
-export function ProjectCard({ name, description, impact, tags, demo, code, image }: ProjectCardProps) {
+export function ProjectCard({ name, description, impact, tags, demo, demoLabel, code, app, image }: ProjectCardProps) {
   return (
     <article className="group overflow-hidden rounded-3xl border border-border/60 bg-card/70 shadow-soft transition hover:-translate-y-1 hover:shadow-xl">
       <div className="relative aspect-[4/3] bg-muted/30">
@@ -34,11 +36,18 @@ export function ProjectCard({ name, description, impact, tags, demo, code, image
         </ul>
         <div className="flex items-center gap-4 pt-2 text-sm font-semibold">
           <Link href={demo} target="_blank" rel="noreferrer" className="inline-flex items-center gap-2 text-accent transition hover:text-accent/80">
-            View demo <ArrowUpRight className="h-4 w-4" aria-hidden />
+            {demoLabel ?? 'View demo'} <ArrowUpRight className="h-4 w-4" aria-hidden />
           </Link>
-          <Link href={code} target="_blank" rel="noreferrer" className="inline-flex items-center gap-2 text-muted-foreground transition hover:text-foreground">
-            <Github className="h-4 w-4" aria-hidden /> Code
-          </Link>
+          {app && (
+            <Link href={app} target="_blank" rel="noreferrer" className="inline-flex items-center gap-2 text-accent transition hover:text-accent/80">
+              Open app <ExternalLink className="h-4 w-4" aria-hidden />
+            </Link>
+          )}
+          {code && (
+            <Link href={code} target="_blank" rel="noreferrer" className="inline-flex items-center gap-2 text-muted-foreground transition hover:text-foreground">
+              <Github className="h-4 w-4" aria-hidden /> Code
+            </Link>
+          )}
         </div>
       </div>
     </article>
