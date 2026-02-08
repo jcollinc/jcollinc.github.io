@@ -37,9 +37,7 @@ export const hero = {
 export const about = {
   title: "Hello, I'm Jon-Collin",
   body: [
-    "I'm mostly driven by dissatisfaction. Dissatisfaction with the portrait I'm currently staring at that I'm now noticing is a little bit off center, with audio recordings where the mix isn't quite right, with systems that work but aren't optimal, with sweltering New York summers that last far too long...",
-    "Fortunately, most of these I can fix. My current project is a city-scale dehumidifier.",
-    "I’ve trained my eye for both detail and design, and delight in translating complex ideas into dependable, people-centric tools. Lately I’ve been building the expense-splitting app, PayTogether, which I hope serves as a reflection of this.",
+    "I’ve trained my eye for both detail and design, and delight in translating complex ideas into dependable, people-centric tools. Lately I’ve been working on the expense-splitting app, PayTogether, and the FPL companion app, myFPL - both of which I hope serve as a reflection of this.",
     "When I’m not working, I’m probably playing guitar, taking a wrong turn, or learning yet another way to brew a cup of coffee (there are too many)."
   ]
 };
@@ -85,7 +83,19 @@ export const projects = [
     demo: 'https://paytogether.io',
     demoLabel: 'Learn more',
     app: 'https://app.paytogether.io',
+    googlePlay: 'https://play.google.com/store/apps/details?id=app.paytogether',
     image: '/projects/paytogether.png'
+  },
+  {
+    name: 'myFPL',
+    description:
+      'Mobile-first PWA for Fantasy Premier League that combines real-time tracking with AI-driven decision support.',
+    impact:
+      'Features live effective points calculation, algorithmic transfer recommendations, and personalized weekly AI analysis reports to help managers rank higher.',
+    tags: ['Next.js', 'Supabase', 'OpenAI', 'Stripe'],
+    app: 'https://www.myfpl.co',
+    googlePlay: 'https://play.google.com/store/apps/details?id=com.myfpl.app',
+    image: '/projects/myfpl.png'
   },
   {
     name: 'ToneBook',
