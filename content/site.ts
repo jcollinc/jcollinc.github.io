@@ -74,6 +74,17 @@ export const education = [
 
 export const projects = [
   {
+    name: 'Maja Labs',
+    description:
+      'The independent software studio and legal entity behind my production applications, including PayTogether and myFPL.',
+    impact:
+      'A home for "thoughtfully crafted software," unifying my ventures under a shared commitment to design quality and engineering rigor.',
+    tags: ['Next.js', 'React', 'Tailwind CSS'],
+    demo: 'https://majalabs.net',
+    demoLabel: 'Visit site',
+    image: '/projects/majalabs.png'
+  },
+  {
     name: 'PayTogether',
     description:
       'Bill-splitting and expense tracking app that facilitates managing group finances.',
