@@ -25,7 +25,7 @@ export const hero = {
     'Forever student of good UX, clean architecture, and joyful tooling'
   ],
   ctaPrimary: {
-    label: 'Résumé',
+    label: 'Resumé',
     href: links.resume
   },
   ctaSecondary: {
