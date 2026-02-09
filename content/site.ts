@@ -104,6 +104,8 @@ export const projects = [
     impact:
       'Features live effective points calculation, algorithmic transfer recommendations, and personalized weekly AI analysis reports to help managers rank higher.',
     tags: ['Next.js', 'Supabase', 'OpenAI', 'Stripe'],
+    demo: 'https://myfpl.co/about',
+    demoLabel: 'Learn more',
     app: 'https://www.myfpl.co',
     googlePlay: 'https://play.google.com/store/apps/details?id=com.myfpl.app',
     image: '/projects/myfpl.png'
@@ -118,27 +120,6 @@ export const projects = [
     code: 'https://github.com/jcollinc/capstone',
     demo: 'https://www.youtube.com/watch?v=lY9g-pIvGqk',
     image: '/projects/tone.png'
-  },
-  {
-    name: 'Bubblegram',
-    description:
-      'AWS Amplify-powered social app where friends exchange “bubble” photo stories in private feeds.',
-    impact: 'Prototyped in a weekend hackathon, validating Amplify’s speed for authenticated media sharing.',
-    tags: ['AWS Amplify', 'React', 'GraphQL'],
-    code: 'https://github.com/jcollinc/Bubblegram',
-    demo: 'https://www.youtube.com/watch?v=X2OwRFLXRzY',
-    image: '/projects/bubble.png'
-  },
-  {
-    name: 'Dotify',
-    description:
-      'A Spotify-inspired music explorer with playlist management and playback powered by React and Sinatra.',
-    impact:
-      'Strengthened full-stack fundamentals by designing communication patterns between RESTful APIs and React state.',
-    tags: ['React', 'Sinatra', 'SQLite'],
-    code: 'https://github.com/jcollinc/Dotify',
-    demo: 'https://www.youtube.com/watch?v=PeQ3-VH7qQ4',
-    image: '/projects/dotify.png'
   }
 ];
 
