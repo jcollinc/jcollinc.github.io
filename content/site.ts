@@ -78,7 +78,7 @@ export const education = [
 
 export const projects = [
   {
-    name: 'Maja Labs',
+    name: 'MajaLabs',
     description:
       'The independent software studio and legal entity behind my production applications, including PayTogether and myFPL.',
     impact:
