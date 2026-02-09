@@ -9,7 +9,10 @@ export function Hero() {
       <div className="space-y-6">
         <p className="text-sm font-semibold uppercase tracking-[0.4em] text-muted-foreground">{meta.role}</p>
         <h1 className="text-4xl font-semibold leading-tight text-foreground sm:text-5xl">
-          {hero.headline}
+          {hero.headline.replace(/™$/, '')}
+          {hero.headline.endsWith('™') && (
+            <span className="text-lg align-top text-muted-foreground sm:text-2xl">™</span>
+          )}
         </h1>
         <p className="max-w-xl text-lg text-muted-foreground">{hero.subheadline}</p>
         <ul className="space-y-2 text-sm text-muted-foreground">

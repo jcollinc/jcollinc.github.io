@@ -15,7 +15,7 @@ export const links = {
 };
 
 export const hero = {
-  headline: 'Building things for myself that hopefully are useful for other people too',
+  headline: 'Building things for myself that, hopefully, are somewhat useful for other people as well™',
   subheadline:
     "I like building things and I like delighting folks",
   heroImage: '/images/jon-collin.jpeg',
@@ -37,18 +37,22 @@ export const hero = {
 export const about = {
   title: "Hello, I'm Jon-Collin",
   body: [
-    "I’ve trained my eye for both detail and design, and delight in translating complex ideas into dependable, people-centric tools. Lately I’ve been working on the expense-splitting app, PayTogether, and the FPL companion app, myFPL - both of which I hope serve as a reflection of this.",
-    "When I’m not working, I’m probably playing guitar, taking a wrong turn, or learning yet another way to brew a cup of coffee (there are too many)."
+    "I’ve trained my eye for both detail and design, and I delight in translating complex ideas into dependable, people-centric tools. I care a lot about the little things, because I know too well that a big thing is only as good as its worst little thing. Lately I’ve been working on the expense-splitting app, PayTogether, and the Fantasy Premier League companion app, myFPL - both of which I hope serve as a reflection of this bent.",
+    "When I’m not working, I’m probably playing guitar, taking a wrong turn, suffering in the gym, or learning yet another way to brew a cup of coffee (there are too many)."
   ]
 };
 
 export const experience = [
   {
+    company: 'MajaLabs LLC',
+    role: 'Founder & Software Engineer'
+  },
+  {
     company: 'Droit',
     role: 'Knowledge Engineer'
   },
   {
-    company: 'Amazon Web Services (via MLH)',
+    company: 'Amazon Web Services',
     role: 'Software Engineer Fellow'
   },
   {
@@ -148,13 +152,10 @@ export const skills = {
   toolkit: [
     'TypeScript',
     'JavaScript',
-    'Python',
     'React',
     'Next.js',
     'Node.js',
-    'Ruby on Rails',
     'SQL',
-    'GraphQL',
     'AWS',
     'PostgreSQL',
     'Tailwind CSS'
@@ -163,7 +164,7 @@ export const skills = {
     'Empathy for teammates and users',
     'Accessibility is non-negotiable',
     'Continuous delivery of small wins',
-    'Documentation as an act of service'
+    'Documentation, documentation, documentation'
   ]
 };
 
