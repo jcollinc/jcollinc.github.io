@@ -51,7 +51,7 @@ export default function Home() {
           id="projects"
           eyebrow="Selected Work"
           title="Projects I don't mind sharing"
-          description="Not all of them, alas."
+          description="Not all of them, alas!"
         >
           <div className="grid gap-8 md:grid-cols-2">
             {projects.map((project) => (
