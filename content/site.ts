@@ -45,7 +45,7 @@ export const about = {
 export const experience = [
   {
     company: 'MajaLabs LLC',
-    role: 'Founder & Software Engineer'
+    role: 'Software Engineer'
   },
   {
     company: 'Droit',
