@@ -38,7 +38,7 @@ export const about = {
   title: "Hello, I'm Jon-Collin",
   body: [
     "My most defining trait is probably that I'm willing to spend an hour automating something that saves me seconds every time I have to do it. I care a lot about the little things, because I know too well that a big thing is only as good as its worst little thing. Whether I'm encoding financial regulations into executable logic or building consumer apps like PayTogether and myFPL, that same stubbornness about the details shows up in everything I build.",
-    "When I’m not working, I’m probably playing guitar, taking a wrong turn, suffering in the gym, or learning yet another coffee-brewing method (there are too many)."
+    "When I’m not working, I’m probably playing guitar, taking a wrong turn, suffering in the gym, or learning yet another coffee-brewing method (there are too many of these)."
   ]
 };
 
