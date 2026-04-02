@@ -1,6 +1,6 @@
 import Image from 'next/image';
 import Link from 'next/link';
-import { ArrowUpRight, Code, ExternalLink, Smartphone } from 'lucide-react';
+import { ArrowUpRight, Apple, Code, Smartphone } from 'lucide-react';
 import type { ComponentProps } from 'react';
 
 interface ProjectCardProps {
@@ -12,12 +12,12 @@ interface ProjectCardProps {
   demoLabel?: string;
   code?: string;
   googlePlay?: string;
-  app?: string;
+  appStore?: string;
   image: ComponentProps<typeof Image>['src'];
 }
 
-export function ProjectCard({ name, description, impact, tags, demo, demoLabel, code, googlePlay, app, image }: ProjectCardProps) {
-  const primaryLink = demo || app || googlePlay || code;
+export function ProjectCard({ name, description, impact, tags, demo, demoLabel, code, googlePlay, appStore, image }: ProjectCardProps) {
+  const primaryLink = demo || googlePlay || appStore || code;
 
   return (
     <article className="group overflow-hidden rounded-3xl border border-border/60 bg-card/70 shadow-soft transition hover:-translate-y-1 hover:shadow-xl">
@@ -55,9 +55,9 @@ export function ProjectCard({ name, description, impact, tags, demo, demoLabel, 
               {demoLabel ?? 'View demo'} <ArrowUpRight className="h-4 w-4" aria-hidden />
             </Link>
           )}
-          {app && (
-            <Link href={app} target="_blank" rel="noreferrer" className="inline-flex items-center gap-2 text-accent transition hover:text-accent/80">
-              Open app <ExternalLink className="h-4 w-4" aria-hidden />
+          {appStore && (
+            <Link href={appStore} target="_blank" rel="noreferrer" className="inline-flex items-center gap-2 text-muted-foreground transition hover:text-foreground">
+              <Apple className="h-4 w-4" aria-hidden /> App Store
             </Link>
           )}
           {googlePlay && (

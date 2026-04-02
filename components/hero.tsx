@@ -5,35 +5,23 @@ import { hero, meta } from '@/content/site';
 
 export function Hero() {
   return (
-    <section className="grid gap-10 pb-16 pt-12 sm:grid-cols-[1.2fr_1fr] sm:items-center">
+    <section className="grid gap-20 pb-16 pt-12 sm:grid-cols-[1.2fr_1fr] sm:items-center">
       <div className="space-y-6">
-        <p className="text-sm font-semibold uppercase tracking-[0.4em] text-muted-foreground">{meta.role}</p>
-        <h1 className="text-4xl font-semibold leading-tight text-foreground sm:text-5xl">
+        <p className="text-sm font-semibold uppercase tracking-[0.4em] text-muted-foreground pb-5">{meta.role}</p>
+        <h1 className="text-5xl font-semibold leading-tight text-foreground sm:text-5xl pb-8">
           {hero.headline.replace(/™$/, '')}
           {hero.headline.endsWith('™') && (
             <span className="text-lg align-top text-muted-foreground sm:text-2xl">™</span>
           )}
         </h1>
-        <p className="max-w-xl text-lg text-muted-foreground">{hero.subheadline}</p>
         <ul className="space-y-2 text-sm text-muted-foreground">
           {hero.bullets.map((bullet) => (
-            <li key={bullet} className="flex items-start gap-3">
+            <li key={bullet} className="flex items-start gap-3 pb-3">
               <span className="mt-1 h-2 w-2 rounded-full bg-accent/80" />
               <span>{bullet}</span>
             </li>
           ))}
         </ul>
-        <div className="flex flex-wrap items-center gap-3 pt-4">
-          <Link
-            href={hero.ctaPrimary.href}
-            target="_blank"
-            rel="noreferrer"
-            className="inline-flex items-center gap-2 rounded-full bg-accent px-6 py-3 text-sm font-semibold text-accent-foreground shadow-soft transition hover:shadow-lg"
-          >
-            {hero.ctaPrimary.label}
-            <ArrowUpRight className="h-4 w-4" aria-hidden />
-          </Link>
-        </div>
       </div>
       <div className="relative hidden sm:block">
         <div className="absolute inset-0 -z-10 rounded-3xl bg-gradient-to-br from-accent/20 via-transparent to-accent/10 blur-3xl" aria-hidden />

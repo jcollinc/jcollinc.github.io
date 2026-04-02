@@ -20,9 +20,9 @@ export const hero = {
     "I like building things and I like delighting folks",
   heroImage: '/images/jon-collin.jpeg',
   bullets: [
-    'Software engineer with a focus on TypeScript and React',
-    'AWS Open Source Fellow who enjoys collaborative problem solving',
-    'Forever student of good UX, clean architecture, and joyful tooling'
+    'Built myFPL to win my work league (and to help others win theirs)',
+    'Built PayTogether because I wanted to',
+    'Will spend an unreasonable amount of time on a reasonable problem'
   ],
   ctaPrimary: {
     label: 'Resumé',
@@ -37,8 +37,8 @@ export const hero = {
 export const about = {
   title: "Hello, I'm Jon-Collin",
   body: [
-    "I’ve trained my eye for both detail and design, and I delight in translating complex ideas into dependable, people-centric tools. I care a lot about the little things, because I know too well that a big thing is only as good as its worst little thing. Lately I’ve been working on the expense-splitting app, PayTogether, and the Fantasy Premier League companion app, myFPL - both of which I hope serve as a reflection of this bent.",
-    "When I’m not working, I’m probably playing guitar, taking a wrong turn, suffering in the gym, or learning yet another way to brew a cup of coffee (there are too many)."
+    "My most defining trait is probably that I'm willing to spend an hour automating something that saves me seconds every time I have to do it. I care a lot about the little things, because I know too well that a big thing is only as good as its worst little thing. Whether I'm encoding financial regulations into executable logic or building consumer apps like PayTogether and myFPL, that same stubbornness about the details shows up in everything I build.",
+    "When I’m not working, I’m probably playing guitar, taking a wrong turn, suffering in the gym, or learning yet another coffee-brewing method (there are too many)."
   ]
 };
 
@@ -91,14 +91,14 @@ export const projects = [
   {
     name: 'PayTogether',
     description:
-      'Bill-splitting and expense tracking app that facilitates managing group finances.',
+      'Bill-splitting and expense tracking app that makes managing group expenses simple.',
     impact:
-      'Currently in private beta. Features smart settle-up suggestions, spending analytics, receipt scanning, and customizable themes to help groups stay on top of shared expenses.',
+      'Features smart settle-up suggestions, spending analytics, receipt scanning, and customizable themes to help groups stay on top of shared costs.',
     tags: ['React', 'TypeScript', 'Next.js', 'PostgreSQL'],
     demo: 'https://paytogether.io',
     demoLabel: 'Learn more',
-    app: 'https://app.paytogether.io',
     googlePlay: 'https://play.google.com/store/apps/details?id=app.paytogether',
+    appStore: 'https://apps.apple.com/us/app/paytogether-split-expenses/id6759358041',
     image: '/projects/paytogether.png'
   },
   {
@@ -110,8 +110,8 @@ export const projects = [
     tags: ['Next.js', 'Supabase', 'OpenAI', 'Stripe'],
     demo: 'https://myfpl.co/about',
     demoLabel: 'Learn more',
-    app: 'https://www.myfpl.co',
     googlePlay: 'https://play.google.com/store/apps/details?id=com.myfpl.app',
+    appStore: 'https://apps.apple.com/us/app/myfpl-fpl-companion/id6759417457',
     image: '/projects/myfpl.png'
   },
   {
@@ -150,21 +150,21 @@ export const writing = [
 
 export const skills = {
   toolkit: [
-    'TypeScript',
-    'JavaScript',
-    'React',
-    'Next.js',
-    'Node.js',
-    'SQL',
-    'AWS',
-    'PostgreSQL',
-    'Tailwind CSS'
+    "TypeScript", 
+    "React", 
+    "Next.js", 
+    "Node.js", 
+    "PostgreSQL", 
+    "Tailwind CSS", 
+    "Supabase", 
+    "Firebase", 
+    "Stripe"
   ],
   values: [
-    'Empathy for teammates and users',
-    'Accessibility is non-negotiable',
-    'Continuous delivery of small wins',
-    'Documentation, documentation, documentation'
+    "Empathy for teammates and users",
+    "Accessibility is non-negotiable",
+    "Automate the boring parts",
+    "Sweat the details so users don't have to"
   ]
 };
 
