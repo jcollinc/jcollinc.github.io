@@ -13,8 +13,8 @@ export function SiteFooter() {
   return (
     <footer className="mt-32 border-t border-foreground/15">
       <div className="mx-auto max-w-6xl px-6 py-16 sm:px-10">
-        <p className="font-display text-5xl font-normal leading-[1] tracking-tightest text-foreground sm:text-7xl">
-          More to <span className="italic text-accent">come.</span>
+        <p className="font-display text-5xl font-normal italic leading-[1] tracking-tightest text-accent sm:text-7xl">
+          More to come!
         </p>
 
         <div className="mt-16 flex flex-col items-start justify-between gap-4 border-t border-foreground/10 pt-6 font-mono text-[11px] uppercase tracking-[0.2em] text-muted-foreground sm:flex-row sm:items-center">
