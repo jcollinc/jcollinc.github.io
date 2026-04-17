@@ -14,62 +14,117 @@ interface ProjectCardProps {
   googlePlay?: string;
   appStore?: string;
   image: ComponentProps<typeof Image>['src'];
+  index?: number;
 }
 
-export function ProjectCard({ name, description, impact, tags, demo, demoLabel, code, googlePlay, appStore, image }: ProjectCardProps) {
+export function ProjectCard({
+  name,
+  description,
+  impact,
+  tags,
+  demo,
+  demoLabel,
+  code,
+  googlePlay,
+  appStore,
+  image,
+  index
+}: ProjectCardProps) {
   const primaryLink = demo || googlePlay || appStore || code;
+  const num = String(index ?? 0).padStart(2, '0');
 
   return (
-    <article className="group overflow-hidden rounded-3xl border border-border/60 bg-card/70 shadow-soft transition hover:-translate-y-1 hover:shadow-xl">
-      <div className="relative aspect-[4/3] bg-muted/30">
-        {primaryLink ? (
-          <Link
-            href={primaryLink}
-            target="_blank"
-            rel="noreferrer"
-            className="absolute inset-0 block"
-            aria-label={`Visit ${name}`}
-          >
-            <Image src={image} alt={name} fill className="object-contain p-4 transition duration-500 group-hover:scale-105" />
-          </Link>
-        ) : (
-          <Image src={image} alt={name} fill className="object-contain p-4 transition duration-500 group-hover:scale-105" />
-        )}
-      </div>
-      <div className="space-y-4 px-6 py-6">
-        <div className="space-y-2">
-          <h3 className="text-xl font-semibold text-foreground">{name}</h3>
-          <p className="text-sm text-muted-foreground">{description}</p>
-          <p className="text-sm font-medium text-foreground/90">{impact}</p>
+    <article className="group relative border-t border-foreground/15 py-8 transition-colors hover:border-foreground/30">
+      <div className="grid gap-6 sm:grid-cols-12 sm:items-start">
+        <div className="font-mono text-xs uppercase tracking-[0.2em] text-muted-foreground sm:col-span-2 sm:pt-2">
+          {num} / {name}
         </div>
-        <ul className="flex flex-wrap gap-2 text-xs font-medium text-muted-foreground">
-          {tags.map((tag) => (
-            <li key={tag} className="rounded-full border border-border px-3 py-1">
-              {tag}
-            </li>
-          ))}
-        </ul>
-        <div className="flex items-center gap-4 pt-2 text-sm font-semibold">
-          {demo && (
-            <Link href={demo} target="_blank" rel="noreferrer" className="inline-flex items-center gap-2 text-accent transition hover:text-accent/80">
-              {demoLabel ?? 'View demo'} <ArrowUpRight className="h-4 w-4" aria-hidden />
+
+        <div className="sm:col-span-6 space-y-4">
+          <h3 className="font-display text-3xl font-normal leading-[1.05] tracking-tightest text-foreground transition group-hover:text-accent sm:text-4xl">
+            {primaryLink ? (
+              <Link href={primaryLink} target="_blank" rel="noreferrer" className="inline-flex items-baseline gap-2">
+                {name}
+                <ArrowUpRight
+                  className="h-5 w-5 -translate-y-1 opacity-40 transition group-hover:-translate-y-2 group-hover:translate-x-1 group-hover:opacity-100"
+                  aria-hidden
+                />
+              </Link>
+            ) : (
+              name
+            )}
+          </h3>
+          <p className="text-sm leading-relaxed text-muted-foreground sm:text-base">{description}</p>
+          <p className="text-sm leading-relaxed text-foreground/80 sm:text-base">{impact}</p>
+
+          <ul className="flex flex-wrap gap-x-3 gap-y-1 font-mono text-[11px] uppercase tracking-[0.15em] text-muted-foreground">
+            {tags.map((tag, i) => (
+              <li key={tag} className="inline-flex items-center gap-3">
+                {i > 0 ? <span className="text-foreground/20">·</span> : null}
+                <span>{tag}</span>
+              </li>
+            ))}
+          </ul>
+
+          <div className="flex flex-wrap items-center gap-x-6 gap-y-2 pt-1 font-mono text-xs">
+            {demo && (
+              <Link
+                href={demo}
+                target="_blank"
+                rel="noreferrer"
+                className="inline-flex items-center gap-1.5 border-b border-foreground/20 pb-0.5 text-foreground transition hover:border-accent hover:text-accent"
+              >
+                {(demoLabel ?? 'view demo').toLowerCase()}
+                <ArrowUpRight className="h-3.5 w-3.5" aria-hidden />
+              </Link>
+            )}
+            {appStore && (
+              <Link
+                href={appStore}
+                target="_blank"
+                rel="noreferrer"
+                className="inline-flex items-center gap-1.5 text-muted-foreground transition hover:text-accent"
+              >
+                <Apple className="h-3.5 w-3.5" aria-hidden /> app store
+              </Link>
+            )}
+            {googlePlay && (
+              <Link
+                href={googlePlay}
+                target="_blank"
+                rel="noreferrer"
+                className="inline-flex items-center gap-1.5 text-muted-foreground transition hover:text-accent"
+              >
+                <Smartphone className="h-3.5 w-3.5" aria-hidden /> play store
+              </Link>
+            )}
+            {code && (
+              <Link
+                href={code}
+                target="_blank"
+                rel="noreferrer"
+                className="inline-flex items-center gap-1.5 text-muted-foreground transition hover:text-accent"
+              >
+                <Code className="h-3.5 w-3.5" aria-hidden /> source
+              </Link>
+            )}
+          </div>
+        </div>
+
+        <div className="relative aspect-[4/3] overflow-hidden bg-muted/40 sm:col-span-4">
+          {primaryLink ? (
+            <Link href={primaryLink} target="_blank" rel="noreferrer" aria-label={`Visit ${name}`} className="absolute inset-0 block">
+              <Image
+                src={image}
+                alt={name}
+                fill
+                className="object-contain p-4 transition duration-700 group-hover:scale-[1.04]"
+              />
             </Link>
+          ) : (
+            <Image src={image} alt={name} fill className="object-contain p-4 transition duration-700 group-hover:scale-[1.04]" />
           )}
-          {appStore && (
-            <Link href={appStore} target="_blank" rel="noreferrer" className="inline-flex items-center gap-2 text-muted-foreground transition hover:text-foreground">
-              <Apple className="h-4 w-4" aria-hidden /> App Store
-            </Link>
-          )}
-          {googlePlay && (
-            <Link href={googlePlay} target="_blank" rel="noreferrer" className="inline-flex items-center gap-2 text-muted-foreground transition hover:text-foreground">
-              <Smartphone className="h-4 w-4" aria-hidden /> Google Play
-            </Link>
-          )}
-          {code && (
-            <Link href={code} target="_blank" rel="noreferrer" className="inline-flex items-center gap-2 text-muted-foreground transition hover:text-foreground">
-              <Code className="h-4 w-4" aria-hidden /> Code
-            </Link>
-          )}
+          <div className="pointer-events-none absolute inset-0 bg-accent/0 mix-blend-multiply transition duration-500 group-hover:bg-accent/5" aria-hidden />
         </div>
       </div>
     </article>

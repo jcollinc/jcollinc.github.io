@@ -1,39 +1,66 @@
 import Image from 'next/image';
-import Link from 'next/link';
-import { ArrowUpRight } from 'lucide-react';
 import { hero, meta } from '@/content/site';
 
 export function Hero() {
+  const hasTradeMark = hero.headline.endsWith('™');
+  const headlineText = hasTradeMark ? hero.headline.slice(0, -1) : hero.headline;
+  const emphasisMatch = headlineText.match(/somewhat useful/i);
+  const parts = emphasisMatch
+    ? headlineText.split(/(somewhat useful)/i)
+    : [headlineText];
+
   return (
-    <section className="grid gap-20 pb-16 pt-12 sm:grid-cols-[1.2fr_1fr] sm:items-center">
-      <div className="space-y-6">
-        <p className="text-sm font-semibold uppercase tracking-[0.4em] text-muted-foreground pb-5">{meta.role}</p>
-        <h1 className="text-5xl font-semibold leading-tight text-foreground sm:text-5xl pb-8">
-          {hero.headline.replace(/™$/, '')}
-          {hero.headline.endsWith('™') && (
-            <span className="text-lg align-top text-muted-foreground sm:text-2xl">™</span>
-          )}
-        </h1>
-        <ul className="space-y-2 text-sm text-muted-foreground">
-          {hero.bullets.map((bullet) => (
-            <li key={bullet} className="flex items-start gap-3 pb-3">
-              <span className="mt-1 h-2 w-2 rounded-full bg-accent/80" />
-              <span>{bullet}</span>
-            </li>
-          ))}
-        </ul>
+    <section className="relative pt-8 sm:pt-14">
+      <div className="mb-10 flex items-center gap-4 font-mono text-xs uppercase tracking-[0.2em] text-muted-foreground">
+        <span>{meta.role}</span>
+        <span className="h-px flex-1 bg-foreground/15" />
       </div>
-      <div className="relative hidden sm:block">
-        <div className="absolute inset-0 -z-10 rounded-3xl bg-gradient-to-br from-accent/20 via-transparent to-accent/10 blur-3xl" aria-hidden />
-        <div className="overflow-hidden rounded-3xl border border-border/70 bg-card/70 shadow-soft backdrop-blur p-3">
-          <Image
-            src={hero.heroImage}
-            alt={`${meta.name} smiling`}
-            width={640}
-            height={800}
-            className="h-full w-full object-cover rounded-3xl"
-            priority
-          />
+
+      <div className="grid gap-12 sm:grid-cols-12 sm:items-center">
+        <div className="sm:col-span-8">
+          <h1 className="font-display text-[clamp(2.25rem,5.5vw,4.5rem)] font-normal leading-[1.02] tracking-tightest text-foreground">
+            {parts.map((part, i) =>
+              part.toLowerCase() === 'somewhat useful' ? (
+                <span key={i} className="italic text-accent">{part}</span>
+              ) : (
+                <span key={i}>{part}</span>
+              )
+            )}
+            {hasTradeMark && (
+              <span className="align-top font-mono text-base text-muted-foreground sm:text-xl">™</span>
+            )}
+          </h1>
+
+          <p className="mt-8 max-w-xl text-base leading-relaxed text-muted-foreground sm:text-lg">
+            {hero.subheadline}
+          </p>
+
+          <ul className="mt-8 max-w-xl space-y-3">
+            {hero.bullets.map((bullet) => (
+              <li key={bullet} className="flex items-start gap-3 text-sm text-foreground/85 sm:text-base">
+                <span className="mt-[0.65rem] h-px w-4 flex-shrink-0 bg-accent" />
+                <span>{bullet}</span>
+              </li>
+            ))}
+          </ul>
+
+        </div>
+
+        <div className="relative hidden sm:col-span-4 sm:block">
+          <div className="relative aspect-[4/5] overflow-hidden">
+            <div className="pointer-events-none absolute inset-0 z-10 bg-accent/10 mix-blend-multiply" aria-hidden />
+            <Image
+              src={hero.heroImage}
+              alt={`${meta.name}`}
+              fill
+              className="object-cover grayscale"
+              priority
+            />
+          </div>
+          <div className="absolute -bottom-3 left-0 right-0 flex items-center justify-between font-mono text-[10px] uppercase tracking-[0.2em] text-muted-foreground">
+            <span>fig. 01</span>
+            <span>— {meta.name.toLowerCase()}</span>
+          </div>
         </div>
       </div>
     </section>

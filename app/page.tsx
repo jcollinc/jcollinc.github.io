@@ -24,51 +24,60 @@ export default function Home() {
   return (
     <Fragment>
       <SiteHeader />
-      <main className="mx-auto flex max-w-6xl flex-col gap-24 px-6 py-16 sm:px-10">
+      <main className="relative z-[2] mx-auto flex max-w-6xl flex-col gap-32 px-6 pb-16 pt-8 sm:px-10 sm:pt-12">
         <Hero />
-        <div id="about" className="scroll-mt-28 space-y-12">
+
+        <div id="about" className="scroll-mt-28 space-y-16">
           <About />
           <SkillsGrid />
         </div>
+
         <Section
           id="experience"
+          index="02"
           eyebrow="Journey"
           title="Experience and education"
-          description="A snapshot of experiences that have led me here, to this very moment." 
+          description="A snapshot of experiences that have led me here, to this very moment."
         >
-          <div className="grid gap-12 lg:grid-cols-2">
+          <div className="grid gap-16 lg:grid-cols-2">
             <div className="space-y-6">
-              <h3 className="text-lg font-semibold text-foreground">Experience</h3>
+              <p className="font-mono text-xs uppercase tracking-[0.2em] text-muted-foreground">Experience</p>
               <Timeline items={experienceTimeline} />
             </div>
             <div className="space-y-6">
-              <h3 className="text-lg font-semibold text-foreground">Education</h3>
+              <p className="font-mono text-xs uppercase tracking-[0.2em] text-muted-foreground">Education</p>
               <Timeline items={educationTimeline} />
             </div>
           </div>
         </Section>
+
         <Section
           id="projects"
+          index="03"
           eyebrow="Selected Work"
           title="Projects I don't mind sharing"
           description="Not all of them, alas!"
         >
-          <div className="grid gap-8 md:grid-cols-2">
-            {projects.map((project) => (
-              <ProjectCard key={project.name} {...project} />
+          <div>
+            {projects.map((project, i) => (
+              <ProjectCard key={project.name} index={i + 1} {...project} />
             ))}
+            <div className="h-px bg-foreground/15" />
           </div>
         </Section>
+
         <Section
           id="writing"
+          index="04"
           eyebrow="Writing"
           title="Notes on things I've found interesting"
           description="I don't write very often, but when I do..."
         >
-          <div className="grid gap-6 md:grid-cols-3">
+          <div>
             {writing.map((entry) => (
               <WritingCard key={entry.url} {...entry} />
             ))}
+            <div className="h-px bg-foreground/15" />
           </div>
         </Section>
       </main>

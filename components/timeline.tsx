@@ -9,18 +9,23 @@ interface TimelineItemProps {
 
 export function Timeline({ items }: { items: TimelineItemProps[] }) {
   return (
-    <ol className="relative space-y-10 border-l border-border/60 pl-6">
+    <ol className="divide-y divide-foreground/10">
       {items.map((item) => (
-        <li key={`${item.title}-${item.period}`} className="group">
-          <span className="absolute -left-[11px] mt-1 h-2.5 w-2.5 rounded-full border border-border/70 bg-card transition group-hover:border-accent group-hover:bg-accent" />
-          <div className="space-y-2">
-            <div className="flex flex-col gap-1 sm:flex-row sm:items-baseline sm:justify-between">
-              <h3 className="text-lg font-semibold text-foreground">{item.title}</h3>
-              {item.period && <span className="text-sm font-medium text-muted-foreground">{item.period}</span>}
+        <li key={`${item.title}-${item.period ?? item.subtitle}`} className="group py-4 transition hover:bg-foreground/[0.02]">
+          <div className="flex flex-col gap-1 sm:flex-row sm:items-baseline sm:justify-between sm:gap-6">
+            <div className="space-y-1">
+              <h3 className="font-display text-xl font-normal leading-tight tracking-tightest text-foreground transition group-hover:text-accent">
+                {item.title}
+              </h3>
+              <p className="font-mono text-[11px] uppercase tracking-[0.18em] text-muted-foreground">
+                {item.subtitle}
+              </p>
             </div>
-            <p className="text-sm text-muted-foreground">{item.subtitle}</p>
-            {item.details ? <div className="space-y-2 text-sm text-muted-foreground">{item.details}</div> : null}
+            {item.period && (
+              <span className="font-mono text-xs text-muted-foreground">{item.period}</span>
+            )}
           </div>
+          {item.details ? <div className="mt-2 space-y-2 text-sm text-muted-foreground">{item.details}</div> : null}
         </li>
       ))}
     </ol>

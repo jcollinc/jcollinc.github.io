@@ -10,9 +10,9 @@ const config: Config = {
   theme: {
     extend: {
       fontFamily: {
-        display: ['"Space Grotesk"', 'system-ui', 'sans-serif'],
-        sans: ['"Inter"', 'system-ui', 'sans-serif'],
-        mono: ['"IBM Plex Mono"', 'monospace']
+        display: ['var(--font-display)', 'Georgia', 'serif'],
+        sans: ['var(--font-sans)', 'system-ui', 'sans-serif'],
+        mono: ['var(--font-mono)', 'ui-monospace', 'monospace']
       },
       colors: {
         background: 'hsl(var(--background))',
@@ -30,6 +30,9 @@ const config: Config = {
           DEFAULT: 'hsl(var(--accent))',
           foreground: 'hsl(var(--accent-foreground))'
         }
+      },
+      letterSpacing: {
+        tightest: '-0.04em'
       },
       boxShadow: {
         soft: '0 20px 60px -20px rgba(15, 23, 42, 0.3)'

@@ -9,26 +9,30 @@ const socials = [
 ];
 
 export function SiteFooter() {
+  const year = new Date().getFullYear();
   return (
-    <footer className="border-t border-border/60 bg-card/70">
-      <div className="mx-auto flex max-w-6xl flex-col gap-6 px-6 py-10 sm:flex-row sm:items-center sm:justify-between sm:px-10">
-        <div className="space-y-2">
-          <p className="text-sm font-semibold text-foreground">{meta.name}</p>
-          <p className="text-xs text-muted-foreground">Built with Next.js & Tailwind CSS</p>
-        </div>
-        <div className="flex items-center gap-4">
-          {socials.map(({ icon: Icon, href, label }) => (
-            <Link
-              key={label}
-              href={href}
-              target="_blank"
-              rel="noreferrer"
-              aria-label={label}
-              className="inline-flex h-10 w-10 items-center justify-center rounded-full border border-border/60 text-muted-foreground transition hover:border-accent hover:text-accent"
-            >
-              <Icon className="h-4 w-4" aria-hidden />
-            </Link>
-          ))}
+    <footer className="mt-32 border-t border-foreground/15">
+      <div className="mx-auto max-w-6xl px-6 py-16 sm:px-10">
+        <p className="font-display text-5xl font-normal leading-[1] tracking-tightest text-foreground sm:text-7xl">
+          More to <span className="italic text-accent">come.</span>
+        </p>
+
+        <div className="mt-16 flex flex-col items-start justify-between gap-4 border-t border-foreground/10 pt-6 font-mono text-[11px] uppercase tracking-[0.2em] text-muted-foreground sm:flex-row sm:items-center">
+          <span>© {year} {meta.name}</span>
+          <div className="flex items-center gap-4">
+            {socials.map(({ icon: Icon, href, label }) => (
+              <Link
+                key={label}
+                href={href}
+                target="_blank"
+                rel="noreferrer"
+                aria-label={label}
+                className="text-muted-foreground transition hover:text-accent"
+              >
+                <Icon className="h-4 w-4" aria-hidden />
+              </Link>
+            ))}
+          </div>
         </div>
       </div>
     </footer>

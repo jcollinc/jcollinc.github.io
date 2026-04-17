@@ -2,37 +2,39 @@
 
 import Link from 'next/link';
 import { ThemeToggle } from '@/components/theme-toggle';
-import { links, meta } from '@/content/site';
+import { links } from '@/content/site';
 
 const navigation = [
-  { href: '#about', label: 'About' },
-  { href: '#experience', label: 'Experience' },
-  { href: '#projects', label: 'Projects' },
-  { href: '#writing', label: 'Writing' }
+  { href: '#about', label: 'About', num: '01' },
+  { href: '#experience', label: 'Work', num: '02' },
+  { href: '#projects', label: 'Projects', num: '03' },
+  { href: '#writing', label: 'Writing', num: '04' }
 ];
 
 export function SiteHeader() {
   return (
-    <header className="sticky top-0 z-40 border-b border-border/60 bg-card/70 backdrop-blur-md">
-      <div className="mx-auto flex max-w-6xl items-center justify-between px-6 py-5 sm:px-10">
-        <Link href="/" className="flex items-center gap-3 text-sm font-semibold uppercase tracking-[0.3em] text-muted-foreground">
-          <span className="h-3 w-3 rounded-full bg-gradient-to-br from-accent to-accent/60" aria-hidden />
-          {meta.name}
+    <header className="sticky top-0 z-40 border-b border-foreground/10 bg-background/80 backdrop-blur-md">
+      <div className="mx-auto flex max-w-6xl items-center justify-between px-6 py-4 sm:px-10">
+        <Link href="/" className="group flex items-baseline gap-2 font-mono text-sm">
+          <span className="font-display text-xl italic leading-none text-accent transition group-hover:rotate-[-6deg]">j</span>
+          <span className="text-foreground">/collin</span>
+          <span className="text-muted-foreground">.chinje</span>
         </Link>
-        <nav className="hidden items-center gap-6 text-sm font-medium text-muted-foreground sm:flex">
-          {navigation.map(({ href, label }) => (
-            <a key={href} href={href} className="relative transition hover:text-foreground">
-              {label}
+        <nav className="hidden items-center gap-6 font-mono text-xs text-muted-foreground sm:flex">
+          {navigation.map(({ href, label, num }) => (
+            <a key={href} href={href} className="group inline-flex items-baseline gap-1.5 transition hover:text-foreground">
+              <span className="text-foreground/30 group-hover:text-accent">{num}</span>
+              <span className="lowercase">{label}</span>
             </a>
           ))}
         </nav>
-        <div className="flex items-center gap-2">
+        <div className="flex items-center gap-5">
           <ThemeToggle />
           <Link
             href={links.resume}
-            className="hidden rounded-full border border-border px-4 py-2 text-sm font-semibold text-foreground transition hover:border-accent hover:text-accent sm:inline-flex"
+            className="hidden items-center gap-1.5 border-b border-foreground/30 pb-0.5 font-mono text-xs text-foreground transition hover:border-accent hover:text-accent sm:inline-flex"
           >
-            Resumé
+            résumé ↗
           </Link>
         </div>
       </div>
