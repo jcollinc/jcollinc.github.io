@@ -1,6 +1,7 @@
 "use client";
 
 import Link from 'next/link';
+import { Github, Linkedin } from 'lucide-react';
 import { ThemeToggle } from '@/components/theme-toggle';
 import { links } from '@/content/site';
 
@@ -29,6 +30,26 @@ export function SiteHeader() {
           ))}
         </nav>
         <div className="flex items-center gap-5">
+          <div className="flex items-center gap-1">
+            <Link
+              href={links.github}
+              target="_blank"
+              rel="noreferrer"
+              aria-label="GitHub"
+              className="inline-flex h-9 w-9 items-center justify-center text-muted-foreground transition hover:text-accent"
+            >
+              <Github className="h-4 w-4" aria-hidden />
+            </Link>
+            <Link
+              href={links.linkedin}
+              target="_blank"
+              rel="noreferrer"
+              aria-label="LinkedIn"
+              className="inline-flex h-9 w-9 items-center justify-center text-muted-foreground transition hover:text-accent"
+            >
+              <Linkedin className="h-4 w-4" aria-hidden />
+            </Link>
+          </div>
           <ThemeToggle />
           <Link
             href={links.resume}
