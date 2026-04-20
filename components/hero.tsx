@@ -4,9 +4,9 @@ import { hero, meta } from '@/content/site';
 export function Hero() {
   const hasTradeMark = hero.headline.endsWith('™');
   const headlineText = hasTradeMark ? hero.headline.slice(0, -1) : hero.headline;
-  const emphasisMatch = headlineText.match(/somewhat useful/i);
+  const emphasisMatch = headlineText.match(/hopefully/i);
   const parts = emphasisMatch
-    ? headlineText.split(/(somewhat useful)/i)
+    ? headlineText.split(/(hopefully)/i)
     : [headlineText];
 
   return (
@@ -20,7 +20,7 @@ export function Hero() {
         <div className="sm:col-span-8">
           <h1 className="font-display text-[clamp(2.25rem,5.5vw,4.5rem)] font-normal leading-[1.02] tracking-tightest text-foreground">
             {parts.map((part, i) =>
-              part.toLowerCase() === 'somewhat useful' ? (
+              part.toLowerCase() === 'hopefully' ? (
                 <span key={i} className="italic text-accent">{part}</span>
               ) : (
                 <span key={i}>{part}</span>

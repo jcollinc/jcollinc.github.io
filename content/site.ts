@@ -22,7 +22,7 @@ export const hero = {
   bullets: [
     'Built myFPL to win my work league (and to help others win theirs)',
     'Built PayTogether because I wanted to',
-    'Will spend an unreasonable amount of time on a reasonable problem'
+    'Will spend unreasonable amounts of time on a reasonable problem'
   ],
   ctaPrimary: {
     label: 'Resumé',
