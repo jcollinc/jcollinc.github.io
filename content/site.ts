@@ -44,12 +44,12 @@ export const about = {
 
 export const experience = [
   {
-    company: 'MajaLabs LLC',
-    role: 'Software Engineer'
-  },
-  {
     company: 'Droit',
     role: 'Knowledge Engineer'
+  },
+  {
+    company: 'MajaLabs LLC',
+    role: 'Software Engineer'
   },
   {
     company: 'Amazon Web Services',
@@ -113,17 +113,6 @@ export const projects = [
     googlePlay: 'https://play.google.com/store/apps/details?id=com.myfpl.app',
     appStore: 'https://apps.apple.com/us/app/myfpl-fpl-companion/id6759417457',
     image: '/projects/myfpl.png'
-  },
-  {
-    name: 'ToneBook',
-    description:
-      'Practice companion for musicians featuring structured routines, lesson planning, and progress tracking.',
-    impact:
-      'Improves practice consistency by translating music pedagogy into actionable daily habits.',
-    tags: ['React', 'Ruby on Rails', 'PostgreSQL'],
-    code: 'https://github.com/jcollinc/capstone',
-    demo: 'https://www.youtube.com/watch?v=lY9g-pIvGqk',
-    image: '/projects/tone.png'
   }
 ];
 
