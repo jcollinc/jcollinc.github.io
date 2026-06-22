@@ -108,7 +108,7 @@ export const projects = [
     impact:
       'Features live effective points calculation, algorithmic transfer recommendations, and personalized weekly AI analysis reports to help managers rank higher.',
     tags: ['Next.js', 'Supabase', 'OpenAI', 'Stripe'],
-    demo: 'https://myfpl.co/about',
+    demo: 'https://myfpl.co',
     demoLabel: 'Learn more',
     googlePlay: 'https://play.google.com/store/apps/details?id=com.myfpl.app',
     appStore: 'https://apps.apple.com/us/app/myfpl-fpl-companion/id6759417457',

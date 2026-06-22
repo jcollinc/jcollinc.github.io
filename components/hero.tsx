@@ -4,10 +4,6 @@ import { hero, meta } from '@/content/site';
 export function Hero() {
   const hasTradeMark = hero.headline.endsWith('™');
   const headlineText = hasTradeMark ? hero.headline.slice(0, -1) : hero.headline;
-  const emphasisMatch = headlineText.match(/hopefully/i);
-  const parts = emphasisMatch
-    ? headlineText.split(/(hopefully)/i)
-    : [headlineText];
 
   return (
     <section className="relative pt-8 sm:pt-14">
@@ -19,13 +15,7 @@ export function Hero() {
       <div className="grid gap-12 sm:grid-cols-12 sm:items-center">
         <div className="sm:col-span-8">
           <h1 className="font-display text-[clamp(2.25rem,5.5vw,4.5rem)] font-normal leading-[1.02] tracking-tightest text-foreground">
-            {parts.map((part, i) =>
-              part.toLowerCase() === 'hopefully' ? (
-                <span key={i} className="italic text-accent">{part}</span>
-              ) : (
-                <span key={i}>{part}</span>
-              )
-            )}
+            {headlineText}
             {hasTradeMark && (
               <span className="align-top font-mono text-base text-muted-foreground sm:text-xl">™</span>
             )}
