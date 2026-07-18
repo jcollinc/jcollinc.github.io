@@ -3,98 +3,103 @@
 @tailwind utilities;
 
 /* ============================================================
-   WELCOME TO 1999. best viewed at 800x600.
+   web 1.0, remastered — dot-com bones, 2026 finish
    ============================================================ */
 
-body {
-  font-family: 'Times New Roman', Times, serif;
-  color: #000000;
-  background-color: #b8bcc0;
-  background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='4' height='4'><rect width='4' height='4' fill='%23b8bcc0'/><rect width='1' height='1' fill='%23c6cacd'/><rect x='2' y='2' width='1' height='1' fill='%23aaaeb2'/></svg>");
+:root {
+  --paper: 40 33% 93%;
+  --surface: 43 40% 97%;
+  --ink: 24 20% 11%;
+  --muted-ink: 25 10% 40%;
+  --gold: 36 78% 45%;
+  --blue: 217 72% 46%;
+  --green: 150 65% 32%;
 }
 
+body {
+  font-family: var(--font-sans), system-ui, sans-serif;
+  color: hsl(var(--ink));
+  background-color: hsl(var(--paper));
+  background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='4' height='4'><rect width='4' height='4' fill='%23ede7da'/><rect width='1' height='1' fill='%23f2ede2'/><rect x='2' y='2' width='1' height='1' fill='%23e6dfd0'/></svg>");
+  font-feature-settings: 'ss01', 'cv11';
+}
+
+/* the immortal link colors */
 a {
   color: #0000ee;
   text-decoration: underline;
+  text-underline-offset: 2px;
 }
 a:visited {
   color: #551a8b;
 }
 a:hover {
-  color: #ff0000;
+  color: #cc2200;
 }
 
-/* era fonts */
-.t-arial {
-  font-family: Arial, Helvetica, sans-serif;
-}
-.t-comic {
-  font-family: 'Comic Sans MS', 'Comic Sans', 'Chalkboard SE', cursive;
-}
-.t-courier {
-  font-family: 'Courier New', Courier, monospace;
-}
-.t-impact {
-  font-family: Impact, 'Arial Black', sans-serif;
+::selection {
+  background-color: hsl(var(--gold) / 0.3);
 }
 
-/* windows 95 chrome */
-.bevel-out {
-  border: 2px outset #ffffff;
-  background-color: #c0c0c0;
+:focus-visible {
+  outline: 2px solid hsl(var(--ink));
+  outline-offset: 2px;
 }
-.bevel-in {
-  border: 2px inset #ffffff;
-  background-color: #c0c0c0;
+
+.mono {
+  font-family: var(--font-mono), 'Courier New', monospace;
 }
-.btn95 {
+
+/* ---- window chrome ---- */
+.window {
+  border: 1.5px solid hsl(var(--ink));
+  background-color: hsl(var(--surface));
+  box-shadow: 5px 5px 0 hsl(var(--ink) / 0.85);
+}
+.window-title {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  background-color: hsl(var(--ink));
+  color: hsl(var(--surface));
+  font-family: var(--font-mono), monospace;
+  font-size: 0.72rem;
+  letter-spacing: 0.08em;
+  padding: 0.4rem 0.75rem;
+}
+.window-controls {
+  letter-spacing: 0.25em;
+  opacity: 0.65;
+  white-space: nowrap;
+}
+
+/* ---- push button (bevel, modernized) ---- */
+.btn {
   display: inline-block;
-  border: 2px outset #ffffff;
-  background-color: #c0c0c0;
-  padding: 1px 10px;
-  font-family: Arial, Helvetica, sans-serif;
-  font-size: 13px;
-  color: #000000 !important;
+  border: 1.5px solid hsl(var(--ink));
+  background-color: hsl(var(--surface));
+  box-shadow: 3px 3px 0 hsl(var(--ink));
+  padding: 0.4rem 0.9rem;
+  font-family: var(--font-mono), monospace;
+  font-size: 0.75rem;
+  color: hsl(var(--ink)) !important;
   text-decoration: none !important;
-  cursor: pointer;
+  transition: transform 0.05s ease, box-shadow 0.05s ease;
 }
-.btn95:active {
-  border-style: inset;
+.btn:hover {
+  background-color: hsl(40 45% 90%);
+  color: hsl(var(--ink)) !important;
 }
-.btn95:visited {
-  color: #000000 !important;
+.btn:active {
+  transform: translate(3px, 3px);
+  box-shadow: 0 0 0 hsl(var(--ink));
 }
-
-/* navy section header bar */
-.navbar-header {
-  background: linear-gradient(90deg, #000080, #1084d0);
-  color: #ffffff;
-  font-family: Arial, Helvetica, sans-serif;
-  font-weight: bold;
-  padding: 2px 8px;
+.btn:visited {
+  color: hsl(var(--ink)) !important;
 }
 
-/* WordArt */
-.wordart {
-  font-family: Impact, 'Arial Black', sans-serif;
-  letter-spacing: 0.02em;
-  background: linear-gradient(180deg, #ff0000, #ff9900, #ffee00, #00bb00, #0000ff, #9900cc);
-  -webkit-background-clip: text;
-  background-clip: text;
-  color: transparent;
-  filter: drop-shadow(3px 3px 0 #000000);
-}
-
-/* the classics */
-@keyframes blinker {
-  50% {
-    opacity: 0;
-  }
-}
-.blink {
-  animation: blinker 1s step-start infinite;
-}
-
+/* ---- marquee ---- */
 .marquee {
   overflow: hidden;
   white-space: nowrap;
@@ -103,68 +108,37 @@ a:hover {
   display: inline-block;
   white-space: nowrap;
   padding-left: 100%;
-  animation: marquee 20s linear infinite;
+  animation: marquee 30s linear infinite;
 }
 @keyframes marquee {
   to {
     transform: translateX(-100%);
   }
 }
-
-@keyframes spin-y {
-  from {
-    transform: rotateY(0deg);
-  }
-  to {
-    transform: rotateY(360deg);
-  }
-}
-.spin-y {
-  display: inline-block;
-  animation: spin-y 2.5s linear infinite;
+.marquee:hover > span {
+  animation-play-state: paused;
 }
 
-/* rainbow divider */
-.rainbow-hr {
-  height: 5px;
-  border: 1px solid #000000;
-  background: linear-gradient(90deg, red, orange, yellow, lime, cyan, blue, magenta, red);
-  background-size: 200% 100%;
-  animation: rainbow-slide 3s linear infinite;
-}
-@keyframes rainbow-slide {
-  to {
-    background-position: -200% 0;
-  }
-}
-
-/* under construction stripes */
-.construction {
-  height: 14px;
-  background: repeating-linear-gradient(-45deg, #f6c700 0 14px, #111111 14px 28px);
-  border: 1px solid #000000;
-}
-
-/* visitor counter */
+/* ---- visitor counter ---- */
 .counter {
   display: inline-block;
   background: #000000;
-  border: 2px inset #ffffff;
-  padding: 2px 4px;
+  border: 1.5px solid hsl(var(--ink));
+  padding: 3px 5px;
 }
 .counter span {
   display: inline-block;
-  font-family: 'Courier New', Courier, monospace;
-  font-weight: bold;
-  font-size: 18px;
-  color: #00ff00;
-  background: #001100;
-  border: 1px solid #003300;
-  padding: 0 3px;
+  font-family: var(--font-mono), monospace;
+  font-weight: 700;
+  font-size: 1rem;
+  color: #33ff66;
+  background: #041104;
+  border: 1px solid #0a2a0a;
+  padding: 0 4px;
   margin: 0 1px;
 }
 
-/* 88x31 badge */
+/* ---- 88x31 badge, remastered ---- */
 .badge88 {
   display: inline-flex;
   flex-direction: column;
@@ -172,30 +146,97 @@ a:hover {
   justify-content: center;
   width: 88px;
   height: 31px;
-  border: 1px solid #000000;
-  font-family: Arial, Helvetica, sans-serif;
-  font-size: 9px;
-  font-weight: bold;
-  line-height: 1.1;
+  border: 1.5px solid hsl(var(--ink));
+  background-color: hsl(var(--surface));
+  box-shadow: 2px 2px 0 hsl(var(--ink) / 0.85);
+  font-family: var(--font-mono), monospace;
+  font-size: 8.5px;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  line-height: 1.25;
   text-align: center;
+  text-transform: uppercase;
   text-decoration: none !important;
+  color: hsl(var(--ink)) !important;
+}
+.badge88:visited {
+  color: hsl(var(--ink)) !important;
 }
 
-/* old-school table */
-.retro-table {
-  border: 2px outset #ffffff;
-  border-collapse: separate;
-  border-spacing: 2px;
-  background-color: #c0c0c0;
+/* ---- construction stripe, thin and knowing ---- */
+.construction {
+  height: 8px;
+  background: repeating-linear-gradient(-45deg, #e0a800 0 10px, hsl(var(--ink)) 10px 20px);
+  border-bottom: 1.5px solid hsl(var(--ink));
 }
-.retro-table td,
-.retro-table th {
-  border: 1px inset #ffffff;
-  padding: 4px 8px;
-  background-color: #ffffff;
+
+/* ---- fake browser chrome ---- */
+.browser-bar {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  border-bottom: 1.5px solid hsl(var(--ink));
+  background-color: hsl(40 30% 88%);
+  padding: 0.35rem 0.6rem;
+  font-family: var(--font-mono), monospace;
+  font-size: 0.7rem;
 }
-.retro-table th {
-  background-color: #000080;
-  color: #ffffff;
-  font-family: Arial, Helvetica, sans-serif;
+.browser-address {
+  flex: 1;
+  border: 1px solid hsl(var(--ink) / 0.5);
+  background-color: hsl(var(--surface));
+  padding: 0.15rem 0.5rem;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+/* ---- ledger table ---- */
+.log-row {
+  display: flex;
+  align-items: baseline;
+  gap: 0.75rem;
+  padding: 0.5rem 0;
+  border-bottom: 1px dotted hsl(var(--ink) / 0.3);
+}
+.log-row:last-child {
+  border-bottom: none;
+}
+
+/* ---- odds and ends ---- */
+@keyframes blinker {
+  50% {
+    opacity: 0;
+  }
+}
+.blink {
+  animation: blinker 1.1s step-start infinite;
+}
+
+.cursor::after {
+  content: '▮';
+  margin-left: 0.1em;
+  color: hsl(var(--gold));
+  animation: blinker 1.1s step-start infinite;
+}
+
+.wordart {
+  font-family: Impact, 'Arial Black', sans-serif;
+  letter-spacing: 0.01em;
+  background: linear-gradient(180deg, #d92500, #e08900, #b5a000, #0f8a4d, #1d5fd6, #7a2ea6);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  filter: drop-shadow(3px 3px 0 hsl(var(--ink)));
+}
+
+.tag-chip {
+  display: inline-block;
+  border: 1px solid hsl(var(--ink) / 0.45);
+  background-color: hsl(var(--surface));
+  padding: 0.1rem 0.45rem;
+  font-family: var(--font-mono), monospace;
+  font-size: 0.68rem;
+  letter-spacing: 0.05em;
+  text-transform: lowercase;
 }

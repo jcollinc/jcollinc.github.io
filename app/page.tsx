@@ -1,316 +1,345 @@
 import Image from 'next/image';
 import Link from 'next/link';
+import type { ReactNode } from 'react';
 import { about, education, experience, hero, links, meta, projects, skills, writing } from '@/content/site';
 
-const projectColors: Record<string, string> = {
-  MajaLabs: '#cc6600',
-  PayTogether: '#0000cc',
-  myFPL: '#008800'
+const projectFlavors: Record<string, string> = {
+  MajaLabs: 'hsl(var(--gold))',
+  PayTogether: 'hsl(var(--blue))',
+  myFPL: 'hsl(var(--green))'
 };
 
-function RainbowHr() {
-  return <div className="rainbow-hr my-4" aria-hidden />;
-}
-
-function SectionHeader({ children }: { children: string }) {
-  return <div className="navbar-header mt-6 text-sm">☆ {children} ☆</div>;
-}
-
-function BackToTop() {
+function Window({
+  id,
+  title,
+  titleColor,
+  className,
+  children
+}: {
+  id?: string;
+  title: string;
+  titleColor?: string;
+  className?: string;
+  children: ReactNode;
+}) {
   return (
-    <p className="mt-2 text-right text-xs">
-      <a href="#top">^ Back to Top ^</a>
-    </p>
+    <section id={id} className={`window scroll-mt-6 ${className ?? ''}`}>
+      <div className="window-title" style={titleColor ? { backgroundColor: titleColor } : undefined}>
+        <span>{title}</span>
+        <span className="window-controls" aria-hidden>
+          – □ ✕
+        </span>
+      </div>
+      <div className="p-5 sm:p-7">{children}</div>
+    </section>
   );
 }
 
+const bulletColors = ['hsl(var(--green))', 'hsl(var(--blue))', 'hsl(var(--gold))'];
+
 export default function Home() {
   return (
-    <div id="top" className="px-2 py-4">
-      {/* ======= HEADER ======= */}
-      <div className="mx-auto w-[780px] max-w-full">
-        <div className="construction" aria-hidden />
-        <div className="py-4 text-center">
-          <p className="t-comic text-sm">★彡 Welcome to my corner of the World Wide Web 彡★</p>
-          <h1 className="wordart py-2 text-5xl sm:text-6xl">JON-COLLIN&apos;S HOMEPAGE</h1>
-          <p className="t-comic text-sm font-bold text-red-700">
-            <span className="blink">🚧</span> This site is UNDER CONSTRUCTION (and always will be){' '}
-            <span className="blink">🚧</span>
+    <>
+      <div className="construction" aria-hidden />
+      <div className="mx-auto max-w-3xl px-4 pb-16 pt-10 sm:px-6">
+        {/* ======= masthead ======= */}
+        <header className="text-center">
+          <p className="mono text-[11px] uppercase tracking-[0.2em] text-[hsl(var(--muted-ink))]">
+            perpetually under construction 🚧
           </p>
-        </div>
-        <div className="construction" aria-hidden />
-
-        {/* marquee */}
-        <div className="marquee mt-2 border-2 border-black bg-black py-1">
-          <span className="t-courier text-sm font-bold text-lime-400">
-            *** Thanks for stopping by!!! *** I&apos;m {meta.name}, a {meta.role} from {meta.location} ***{' '}
-            {hero.subheadline} *** Don&apos;t forget to sign my guestbook before you go!!! *** This page is
-            Y2K compliant ***
-          </span>
-        </div>
-
-        {/* nav + counter */}
-        <div className="mt-3 text-center">
-          <p className="text-sm font-bold">
-            [ <a href="#about">About Me</a> | <a href="#work">My Jobs</a> | <a href="#projects">Cool Projects</a> |{' '}
-            <a href="#writing">My Essays</a> | <a href={links.resume}>My Résumé (.pdf)</a> |{' '}
-            <a href={`mailto:${links.email}`}>E-Mail Me!</a> ]
+          <h1 className="wordart mt-3 text-5xl sm:text-6xl">{meta.name.toUpperCase()}</h1>
+          <p className="mono mt-3 text-xs uppercase tracking-[0.18em] text-[hsl(var(--muted-ink))]">
+            {meta.role}
           </p>
-          <div className="mt-3">
-            <span className="mr-2 align-middle text-sm">You are visitor №:</span>
+
+          <nav className="mono mt-6 text-sm">
+            [ <a href="#about">about</a> | <a href="#career">career</a> | <a href="#projects">projects</a> |{' '}
+            <a href="#writing">writing</a> | <a href={links.resume}>résumé</a> |{' '}
+            <a href={`mailto:${links.email}`}>email</a> ]
+          </nav>
+
+          <div className="mt-6">
+            <span className="mono mr-2 align-middle text-xs">you are visitor №</span>
             <span className="counter align-middle">
               {['0', '0', '4', '2', '0', '7'].map((d, i) => (
                 <span key={i}>{d}</span>
               ))}
             </span>
-            <span className="ml-2 align-middle text-xs">(since December 1999)</span>
+            <span className="mono ml-2 align-middle text-[11px] text-[hsl(var(--muted-ink))]">
+              since the dial-up days
+            </span>
           </div>
+        </header>
+
+        {/* ======= marquee ======= */}
+        <div className="marquee mt-8 border-y-[1.5px] border-[hsl(var(--ink))] bg-[hsl(var(--surface))] py-1.5">
+          <span className="mono text-xs">
+            welcome to jon-chinje.com ··· {meta.summary.toLowerCase()} ··· {hero.subheadline.toLowerCase()} ···
+            sign the guestbook before you go ✍ ···
+          </span>
         </div>
 
-        {/* ======= MAIN CONTENT BOX ======= */}
-        <div className="bevel-out mt-4 p-1">
-          <div className="border border-black bg-white p-4">
-            {/* ABOUT */}
-            <div id="about">
-              <SectionHeader>ABOUT ME</SectionHeader>
-              <div className="mt-3 flex flex-col gap-4 sm:flex-row">
-                <div className="shrink-0 text-center">
-                  <div className="bevel-in inline-block p-1">
-                    <Image
-                      src={hero.heroImage}
-                      alt={meta.name}
-                      width={160}
-                      height={200}
-                      className="block"
-                      priority
-                    />
-                  </div>
-                  <p className="t-comic mt-1 text-xs">^ me, IRL</p>
-                  <p className="t-courier mt-2 text-xs">
-                    A/S/L: yes/yes/
-                    <br />
-                    Queens, NY
-                  </p>
-                </div>
-                <div className="text-[15px] leading-snug">
-                  {about.body.map((p, i) => (
-                    <p key={i} className="mb-3">
-                      {p}
-                    </p>
-                  ))}
-                  <p className="t-comic text-sm font-bold text-blue-800">
-                    Fun fact: {hero.bullets[2]} 😎
-                  </p>
-                </div>
-              </div>
-
-              <RainbowHr />
-
-              {/* skillz */}
-              <div className="flex flex-col gap-4 sm:flex-row">
-                <div className="flex-1">
-                  <p className="t-arial text-sm font-bold text-[#000080]">💾 My Computer Skillz:</p>
-                  <p className="t-courier mt-1 text-sm leading-relaxed">
-                    {skills.toolkit.map((tool) => (
-                      <span key={tool} className="mr-1 inline-block whitespace-nowrap">
-                        [{tool}]
-                      </span>
-                    ))}
-                  </p>
-                </div>
-                <div className="flex-1">
-                  <p className="t-arial text-sm font-bold text-[#000080]">✨ Things I Believe In:</p>
-                  <ul className="mt-1 list-none text-sm">
-                    {skills.values.map((v) => (
-                      <li key={v}>⭐ {v}</li>
-                    ))}
-                  </ul>
-                </div>
-              </div>
-              <BackToTop />
-            </div>
-
-            {/* WORK */}
-            <div id="work">
-              <SectionHeader>MY JOBS &amp; SKOOL</SectionHeader>
-              <div className="mt-3 flex flex-col gap-4 sm:flex-row">
-                <table className="retro-table flex-1 text-sm">
-                  <tbody>
-                    <tr>
-                      <th colSpan={2}>💼 Places I&apos;ve Worked</th>
-                    </tr>
-                    {experience.map((job) => (
-                      <tr key={job.company}>
-                        <td className="font-bold">{job.role}</td>
-                        <td>{job.company}</td>
-                      </tr>
-                    ))}
-                  </tbody>
-                </table>
-                <table className="retro-table flex-1 text-sm">
-                  <tbody>
-                    <tr>
-                      <th colSpan={2}>🎓 Where I Learned Stuff</th>
-                    </tr>
-                    {education.map((school) => (
-                      <tr key={school.institution}>
-                        <td className="font-bold">{school.institution}</td>
-                        <td>{school.program}</td>
-                      </tr>
-                    ))}
-                  </tbody>
-                </table>
-              </div>
-              <BackToTop />
-            </div>
-
-            {/* PROJECTS */}
-            <div id="projects">
-              <SectionHeader>MY COOL PROJECTS!!</SectionHeader>
-              <p className="t-comic mt-2 text-center text-sm">
-                (i made all of these myself. click the pictures!!)
-              </p>
-              {projects.map((project, i) => (
-                <div key={project.name}>
-                  <div className="mt-3 flex flex-col items-center gap-4 sm:flex-row sm:items-start">
-                    <div className="bevel-in shrink-0 p-1">
-                      <Link href={project.demo ?? '#'} target="_blank" rel="noreferrer">
-                        <Image src={project.image} alt={project.name} width={260} height={195} className="block" />
-                      </Link>
-                    </div>
-                    <div className="text-sm">
-                      <p className="t-comic text-xl font-bold" style={{ color: projectColors[project.name] ?? '#cc0000' }}>
-                        {project.name}
-                        {i === 0 && (
-                          <span className="blink ml-2 align-middle text-sm text-red-600">
-                            ★NEW!★
-                          </span>
-                        )}
-                      </p>
-                      <p className="mt-1">{project.description}</p>
-                      <p className="mt-1">{project.impact}</p>
-                      <p className="t-courier mt-1 text-xs">
-                        Powered by: {project.tags.join(' + ')}
-                      </p>
-                      <p className="mt-2 space-x-2">
-                        {project.demo && (
-                          <a className="btn95" href={project.demo} target="_blank" rel="noreferrer">
-                            {project.demoLabel ?? 'Visit'}!!
-                          </a>
-                        )}
-                        {project.appStore && (
-                          <a className="btn95" href={project.appStore} target="_blank" rel="noreferrer">
-                            📱 App Store
-                          </a>
-                        )}
-                        {project.googlePlay && (
-                          <a className="btn95" href={project.googlePlay} target="_blank" rel="noreferrer">
-                            🤖 Play Store
-                          </a>
-                        )}
-                      </p>
-                    </div>
-                  </div>
-                  {i < projects.length - 1 && <RainbowHr />}
-                </div>
+        <main className="mt-10 flex flex-col gap-10">
+          {/* welcome */}
+          <Window title="welcome.txt">
+            <h2 className="cursor text-2xl font-bold leading-snug tracking-tight sm:text-3xl">
+              {hero.headline.replace('™', '')}
+              <span className="mono align-top text-sm font-normal text-[hsl(var(--muted-ink))]">™</span>
+            </h2>
+            <ul className="mt-5 space-y-2.5">
+              {hero.bullets.map((bullet, i) => (
+                <li key={bullet} className="flex items-start gap-3 text-[15px] leading-relaxed">
+                  <span
+                    className="mt-[7px] h-2 w-2 flex-shrink-0"
+                    style={{ backgroundColor: bulletColors[i % bulletColors.length] }}
+                    aria-hidden
+                  />
+                  <span>{bullet}</span>
+                </li>
               ))}
-              <BackToTop />
+            </ul>
+            <div className="mt-6 flex flex-wrap gap-3">
+              <a className="btn" href={hero.ctaPrimary.href}>
+                {hero.ctaPrimary.label.toLowerCase()} ↗
+              </a>
+              <a className="btn" href={hero.ctaSecondary.href}>
+                {hero.ctaSecondary.label.toLowerCase()} →
+              </a>
+            </div>
+          </Window>
+
+          {/* about */}
+          <Window id="about" title="about_me.txt">
+            <div className="flex flex-col gap-6 sm:flex-row">
+              <figure className="shrink-0 text-center">
+                <div className="border-[1.5px] border-[hsl(var(--ink))] p-1 shadow-[3px_3px_0_hsl(var(--ink)/0.85)]">
+                  <Image src={hero.heroImage} alt={meta.name} width={170} height={212} className="block" priority />
+                </div>
+                <figcaption className="mono mt-2 text-[11px] text-[hsl(var(--muted-ink))]">me, IRL</figcaption>
+              </figure>
+              <div className="space-y-4 text-[15px] leading-relaxed">
+                {about.body.map((p, i) => (
+                  <p key={i} className={i > 0 ? 'text-[hsl(var(--muted-ink))]' : ''}>
+                    {p}
+                  </p>
+                ))}
+              </div>
             </div>
 
-            {/* WRITING */}
-            <div id="writing">
-              <SectionHeader>MY ESSAYS &amp; MUSINGS</SectionHeader>
-              <ul className="mt-3 list-none text-sm">
-                {writing.map((entry) => (
-                  <li key={entry.url} className="mb-2">
-                    📄{' '}
-                    <a href={entry.url} target="_blank" rel="noreferrer" className="font-bold">
-                      {entry.title}
-                    </a>{' '}
-                    <span className="text-xs">({entry.date})</span>
-                    <br />
-                    <span className="ml-6 italic">{entry.description}</span>
+            <div className="mt-7 border-t border-dotted border-[hsl(var(--ink)/0.35)] pt-6">
+              <p className="mono text-[11px] uppercase tracking-[0.18em] text-[hsl(var(--muted-ink))]">toolkit</p>
+              <p className="mt-2.5 flex flex-wrap gap-1.5">
+                {skills.toolkit.map((tool) => (
+                  <span key={tool} className="tag-chip">
+                    {tool}
+                  </span>
+                ))}
+              </p>
+              <p className="mono mt-6 text-[11px] uppercase tracking-[0.18em] text-[hsl(var(--muted-ink))]">
+                principles
+              </p>
+              <ul className="mt-2.5 space-y-2">
+                {skills.values.map((v, i) => (
+                  <li key={v} className="flex items-baseline gap-3 text-[15px]">
+                    <span className="mono text-xs" style={{ color: bulletColors[i % bulletColors.length] }}>
+                      0{i + 1}
+                    </span>
+                    <span>{v}</span>
                   </li>
                 ))}
               </ul>
-              <BackToTop />
             </div>
+          </Window>
 
-            {/* GUESTBOOK */}
-            <SectionHeader>SIGN MY GUESTBOOK!!</SectionHeader>
-            <div className="mt-3 text-center">
-              <p className="t-comic text-sm">
-                Like my page? Hate my page? Let me know!! I read every single one!!
+          {/* career */}
+          <Window id="career" title="career.log">
+            <div className="grid gap-8 sm:grid-cols-2">
+              <div>
+                <p className="mono text-[11px] uppercase tracking-[0.18em] text-[hsl(var(--muted-ink))]">
+                  experience
+                </p>
+                <div className="mt-3">
+                  {experience.map((job) => (
+                    <div key={job.company} className="log-row">
+                      <span className="text-[15px] font-semibold">{job.role}</span>
+                      <span className="mono ml-auto text-right text-[11px] uppercase tracking-[0.12em] text-[hsl(var(--muted-ink))]">
+                        {job.company}
+                      </span>
+                    </div>
+                  ))}
+                </div>
+              </div>
+              <div>
+                <p className="mono text-[11px] uppercase tracking-[0.18em] text-[hsl(var(--muted-ink))]">
+                  education
+                </p>
+                <div className="mt-3">
+                  {education.map((school) => (
+                    <div key={school.institution} className="log-row">
+                      <span className="text-[15px] font-semibold">{school.institution}</span>
+                      <span className="mono ml-auto text-right text-[11px] uppercase tracking-[0.12em] text-[hsl(var(--muted-ink))]">
+                        {school.program}
+                      </span>
+                    </div>
+                  ))}
+                </div>
+              </div>
+            </div>
+          </Window>
+
+          {/* projects */}
+          <div id="projects" className="scroll-mt-6 space-y-10">
+            {projects.map((project) => {
+              const flavor = projectFlavors[project.name] ?? 'hsl(var(--ink))';
+              const url = project.demo ?? '#';
+              const displayUrl = project.demo?.replace(/^https?:\/\//, '') ?? '';
+              return (
+                <Window key={project.name} title={`${project.name.toLowerCase()}.exe`} titleColor={flavor}>
+                  <div className="-m-5 sm:-m-7">
+                    <div className="browser-bar">
+                      <span aria-hidden>◀ ▶ ⟳</span>
+                      <Link href={url} target="_blank" rel="noreferrer" className="browser-address">
+                        https://{displayUrl}
+                      </Link>
+                    </div>
+                    <Link
+                      href={url}
+                      target="_blank"
+                      rel="noreferrer"
+                      aria-label={`Visit ${project.name}`}
+                      className="block border-b-[1.5px] border-[hsl(var(--ink))] bg-white"
+                    >
+                      <div className="relative h-64 sm:h-80">
+                        <Image src={project.image} alt={project.name} fill className="object-contain p-4" />
+                      </div>
+                    </Link>
+                    <div className="p-5 sm:p-7">
+                      <div className="flex flex-wrap items-baseline justify-between gap-3">
+                        <h3 className="text-2xl font-bold tracking-tight">{project.name}</h3>
+                        <p className="flex flex-wrap gap-1.5">
+                          {project.tags.map((tag) => (
+                            <span key={tag} className="tag-chip">
+                              {tag}
+                            </span>
+                          ))}
+                        </p>
+                      </div>
+                      <p className="mt-3 text-[15px] leading-relaxed">{project.description}</p>
+                      <p className="mt-2 text-[15px] leading-relaxed text-[hsl(var(--muted-ink))]">
+                        {project.impact}
+                      </p>
+                      <div className="mt-5 flex flex-wrap gap-3">
+                        {project.demo && (
+                          <a className="btn" href={project.demo} target="_blank" rel="noreferrer">
+                            {(project.demoLabel ?? 'visit').toLowerCase()} ↗
+                          </a>
+                        )}
+                        {project.appStore && (
+                          <a className="btn" href={project.appStore} target="_blank" rel="noreferrer">
+                            app store
+                          </a>
+                        )}
+                        {project.googlePlay && (
+                          <a className="btn" href={project.googlePlay} target="_blank" rel="noreferrer">
+                            play store
+                          </a>
+                        )}
+                      </div>
+                    </div>
+                  </div>
+                </Window>
+              );
+            })}
+          </div>
+
+          {/* writing */}
+          <Window id="writing" title="musings.txt">
+            <ul className="space-y-5">
+              {writing.map((entry) => (
+                <li key={entry.url}>
+                  <p>
+                    <a href={entry.url} target="_blank" rel="noreferrer" className="text-[15px] font-semibold">
+                      {entry.title}
+                    </a>
+                  </p>
+                  <p className="mt-1 text-sm text-[hsl(var(--muted-ink))]">
+                    {entry.description}{' '}
+                    <span className="mono text-[11px] uppercase tracking-[0.12em]">· {entry.date}</span>
+                  </p>
+                </li>
+              ))}
+            </ul>
+          </Window>
+
+          {/* guestbook */}
+          <Window title="guestbook.exe">
+            <p className="text-[15px] leading-relaxed">
+              Like the page? Tell me why. Hate it? Definitely tell me why. Either way, it&apos;s nice to hear
+              from people.
+            </p>
+            <div className="mt-5 flex flex-wrap gap-3">
+              <a className="btn" href={`mailto:${links.email}?subject=guestbook`}>
+                ✍ sign the guestbook
+              </a>
+              <a className="btn" href={links.github} target="_blank" rel="noreferrer">
+                github
+              </a>
+              <a className="btn" href={links.linkedin} target="_blank" rel="noreferrer">
+                linkedin
+              </a>
+              <a className="btn" href={links.medium} target="_blank" rel="noreferrer">
+                medium
+              </a>
+            </div>
+          </Window>
+
+          {/* webring */}
+          <div className="window mx-auto w-fit max-w-full">
+            <div className="px-8 py-4 text-center">
+              <p className="mono text-[11px] uppercase tracking-[0.18em] text-[hsl(var(--muted-ink))]">
+                the majalabs webring
               </p>
-              <p className="mt-2">
-                <a className="btn95" href={`mailto:${links.email}?subject=RE: your awesome homepage`}>
-                  ✍️ Sign Guestbook
-                </a>{' '}
-                <a className="btn95" href={`mailto:${links.email}`}>
-                  <span className="spin-y">📧</span> E-Mail Me!!
-                </a>
-              </p>
-              <p className="t-courier mt-2 text-xs">
-                ♪ now playing: jon_guitar_riff.mid [<a href="#top">stop</a>] ♪
+              <p className="mono mt-2 text-sm">
+                [ <a href="https://paytogether.io" target="_blank" rel="noreferrer">&lt;&lt; prev</a> |{' '}
+                <a href="https://majalabs.net" target="_blank" rel="noreferrer">random</a> |{' '}
+                <a href="https://myfpl.co" target="_blank" rel="noreferrer">next &gt;&gt;</a> ]
               </p>
             </div>
           </div>
-        </div>
+        </main>
 
-        {/* ======= WEBRING ======= */}
-        <div className="bevel-out mx-auto mt-4 w-fit max-w-full px-6 py-3 text-center">
-          <p className="t-arial text-sm font-bold">~ The MajaLabs WebRing ~</p>
-          <p className="mt-1 text-sm">
-            [ <a href="https://paytogether.io" target="_blank" rel="noreferrer">&lt;&lt; prev</a> |{' '}
-            <a href="https://majalabs.net" target="_blank" rel="noreferrer">random</a> |{' '}
-            <a href="https://myfpl.co" target="_blank" rel="noreferrer">next &gt;&gt;</a> ]
-          </p>
-        </div>
-
-        {/* ======= BADGES ======= */}
-        <div className="mt-4 flex flex-wrap items-center justify-center gap-1.5">
-          <span className="badge88 bg-black text-white">
-            <span>NETSCAPE</span>
-            <span className="text-lime-400">NOW!</span>
-          </span>
-          <span className="badge88 bg-[#000080] text-white">
-            <span>best viewed at</span>
-            <span>800 x 600</span>
-          </span>
-          <span className="badge88 bevel-out">
-            <span>MADE WITH</span>
-            <span>NOTEPAD.EXE</span>
-          </span>
-          <span className="badge88 bg-black text-lime-400">
-            <span>Y2K</span>
-            <span>COMPLIANT ✓</span>
-          </span>
-          <span className="badge88 bg-yellow-300">
-            <span>VALID</span>
-            <span>HTML 4.0!</span>
-          </span>
-          <a className="badge88 bg-white" href={links.github} target="_blank" rel="noreferrer">
-            <span>my code on</span>
-            <span>GITHUB</span>
-          </a>
-        </div>
-
-        {/* ======= FOOTER ======= */}
-        <RainbowHr />
-        <div className="pb-6 text-center text-xs">
-          <p>
-            © 1999–2026 {meta.name}. All Rights Reserved. Do NOT steal my HTML!!
-          </p>
-          <p className="mt-1">
-            Last updated: July 18, 2026 · Hand-coded with love in Notepad.exe · Hosted on GeoCities{' '}
-            <span className="t-courier">(/SiliconValley/Heights/4207)</span>
-          </p>
-          <p className="mt-1">
-            This page is best experienced in Netscape Navigator 4.0 at 800x600 resolution with your speakers ON.
-          </p>
-          <p className="t-comic mt-3 text-sm font-bold text-purple-800">~*~ thanx 4 visiting!! come back soon!! ~*~</p>
-        </div>
+        {/* ======= badges + footer ======= */}
+        <footer className="mt-12">
+          <div className="flex flex-wrap items-center justify-center gap-2">
+            <span className="badge88">
+              <span>netscape</span>
+              <span>ready</span>
+            </span>
+            <span className="badge88">
+              <span>800×600</span>
+              <span>friendly</span>
+            </span>
+            <span className="badge88">
+              <span>y2k</span>
+              <span>compliant ✓</span>
+            </span>
+            <span className="badge88">
+              <span>made with</span>
+              <span>notepad.exe*</span>
+            </span>
+            <a className="badge88" href={links.github} target="_blank" rel="noreferrer">
+              <span>view source</span>
+              <span>github</span>
+            </a>
+          </div>
+          <div className="mono mt-8 space-y-1.5 text-center text-[11px] text-[hsl(var(--muted-ink))]">
+            <p>© 2026 {meta.name.toLowerCase()} · best viewed at any resolution</p>
+            <p>
+              thanks for visiting — <span className="blink">come back soon</span>
+            </p>
+          </div>
+        </footer>
       </div>
-    </div>
+    </>
   );
 }

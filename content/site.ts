@@ -1,6 +1,5 @@
 export const meta = {
   name: 'Jon-Collin Chinje',
-  location: 'Queens, New York',
   role: 'Software Engineer',
   summary:
     'I build resilient, human-centered web experiences with a bias toward clarity, iteration, and long-term maintainability.'
