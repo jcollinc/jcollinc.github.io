@@ -4,34 +4,49 @@
 
 :root {
   /* warm paper + ink */
-  --background: 36 30% 96%;
-  --foreground: 20 14% 11%;
-  --muted: 34 20% 88%;
-  --muted-foreground: 25 10% 38%;
-  --card: 36 30% 98%;
-  --card-foreground: 20 14% 11%;
-  --border: 28 18% 82%;
-  --accent: 10 72% 48%;
-  --accent-foreground: 36 30% 98%;
-  --rule: 20 14% 11%;
+  --background: 39 36% 95%;
+  --foreground: 24 18% 12%;
+  --muted: 34 22% 88%;
+  --muted-foreground: 26 10% 40%;
+  --card: 40 36% 97%;
+  --card-foreground: 24 18% 12%;
+  --border: 30 16% 80%;
+  --accent: 14 68% 42%;
+  --accent-foreground: 40 36% 97%;
+  --rule: 24 18% 12%;
+
+  /* pops */
+  --pop-green: 150 60% 34%;
+  --pop-blue: 217 75% 48%;
+  --pop-gold: 36 90% 42%;
 }
 
 .dark {
   /* deep warm ink */
-  --background: 24 14% 7%;
-  --foreground: 36 24% 92%;
+  --background: 24 15% 7%;
+  --foreground: 38 26% 90%;
   --muted: 22 10% 14%;
-  --muted-foreground: 30 10% 65%;
-  --card: 22 12% 10%;
-  --card-foreground: 36 24% 92%;
-  --border: 26 12% 22%;
-  --accent: 18 88% 62%;
-  --accent-foreground: 24 14% 7%;
-  --rule: 36 24% 92%;
+  --muted-foreground: 32 9% 62%;
+  --card: 23 13% 10%;
+  --card-foreground: 38 26% 90%;
+  --border: 26 12% 20%;
+  --accent: 20 86% 64%;
+  --accent-foreground: 24 15% 7%;
+  --rule: 38 26% 90%;
+
+  --pop-green: 150 65% 55%;
+  --pop-blue: 214 90% 68%;
+  --pop-gold: 40 95% 62%;
 }
 
 html {
   scroll-behavior: smooth;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
 }
 
 body {
@@ -44,6 +59,11 @@ body {
 ::selection {
   background-color: hsl(var(--accent) / 0.25);
   color: hsl(var(--foreground));
+}
+
+:focus-visible {
+  outline: 1.5px solid hsl(var(--accent));
+  outline-offset: 3px;
 }
 
 /* subtle paper grain — barely-there */
@@ -62,19 +82,11 @@ body {
   mix-blend-mode: screen;
 }
 
-/* editorial display number — for section eyebrows */
-.display-serif {
-  font-family: theme('fontFamily.display');
-  font-optical-sizing: auto;
-  font-variation-settings: 'opsz' 144, 'SOFT' 30;
-  letter-spacing: -0.035em;
-}
-
 /* mono label */
 .mono-label {
   font-family: theme('fontFamily.mono');
   font-size: 0.7rem;
-  letter-spacing: 0.12em;
+  letter-spacing: 0.14em;
   text-transform: uppercase;
   color: hsl(var(--muted-foreground));
 }
@@ -83,6 +95,94 @@ body {
 .rule {
   height: 1px;
   background-color: hsl(var(--rule) / 0.15);
+}
+
+/* dotted leader — the "......" between an entry and its annotation, like a book's TOC */
+.leader {
+  flex: 1;
+  min-width: 1.5rem;
+  border-bottom: 1px dotted hsl(var(--rule) / 0.3);
+  transform: translateY(-0.28em);
+}
+
+/* oversized ghost numeral behind section titles */
+.ghost-num {
+  position: absolute;
+  top: -0.42em;
+  left: -0.04em;
+  z-index: -1;
+  font-family: theme('fontFamily.display');
+  font-weight: 700;
+  font-size: clamp(6rem, 13vw, 9.5rem);
+  line-height: 1;
+  color: hsl(var(--rule) / 0.05);
+  user-select: none;
+  pointer-events: none;
+}
+
+/* drop cap for the opening paragraph */
+.dropcap::first-letter {
+  float: left;
+  font-family: theme('fontFamily.display');
+  font-weight: 600;
+  font-size: 3.1em;
+  line-height: 0.82;
+  padding-right: 0.14em;
+  padding-top: 0.06em;
+  color: hsl(var(--accent));
+}
+
+/* handwritten marginalia */
+.scribble {
+  font-family: var(--font-scribble), cursive;
+  font-weight: 500;
+  font-size: 1.15rem;
+  line-height: 1.15;
+  color: hsl(var(--accent));
+}
+
+/* swiped highlighter */
+.marker {
+  padding: 0 0.12em;
+  margin: 0 -0.04em;
+  border-radius: 0.25em 0.1em 0.3em 0.12em;
+  background: linear-gradient(
+    100deg,
+    transparent 1%,
+    hsl(var(--accent) / 0.32) 3%,
+    hsl(var(--accent) / 0.22) 96%,
+    transparent 98%
+  );
+  -webkit-box-decoration-break: clone;
+  box-decoration-break: clone;
+}
+
+/* hollow display numeral */
+.outline-num {
+  -webkit-text-stroke: 1.5px hsl(var(--flavor) / 0.45);
+  color: transparent;
+}
+
+/* a strip of translucent tape */
+.tape {
+  position: absolute;
+  z-index: 20;
+  height: 1.6rem;
+  width: 5rem;
+  background: hsl(40 35% 88% / 0.55);
+  box-shadow: 0 1px 3px hsl(var(--rule) / 0.12);
+  backdrop-filter: blur(1px);
+}
+.dark .tape {
+  background: hsl(40 25% 85% / 0.14);
+}
+
+/* pasted-in photograph */
+.plate {
+  background-color: hsl(var(--card));
+  border: 1px solid hsl(var(--border) / 0.7);
+  box-shadow: 0 18px 50px -24px hsl(var(--rule) / 0.35);
+  transition: transform 0.5s ease;
 }
 
 /* live dot */

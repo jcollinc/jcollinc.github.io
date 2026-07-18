@@ -10,9 +10,10 @@ const config: Config = {
   theme: {
     extend: {
       fontFamily: {
-        display: ['var(--font-display)', 'Georgia', 'serif'],
+        display: ['var(--font-display)', 'system-ui', 'sans-serif'],
         sans: ['var(--font-sans)', 'system-ui', 'sans-serif'],
-        mono: ['var(--font-mono)', 'ui-monospace', 'monospace']
+        mono: ['var(--font-mono)', 'ui-monospace', 'monospace'],
+        scribble: ['var(--font-scribble)', 'cursive']
       },
       colors: {
         background: 'hsl(var(--background))',
@@ -32,7 +33,7 @@ const config: Config = {
         }
       },
       letterSpacing: {
-        tightest: '-0.04em'
+        tightest: '-0.03em'
       },
       boxShadow: {
         soft: '0 20px 60px -20px rgba(15, 23, 42, 0.3)'

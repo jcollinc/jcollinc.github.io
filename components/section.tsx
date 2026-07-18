@@ -1,5 +1,6 @@
 import type { ReactNode } from 'react';
 import { cn } from '@/lib/utils';
+import { HandArrow } from '@/components/doodles';
 
 interface SectionProps {
   id: string;
@@ -13,20 +14,26 @@ interface SectionProps {
 
 export function Section({ id, eyebrow, index, title, description, className, children }: SectionProps) {
   return (
-    <section id={id} className={cn('scroll-mt-28', className)}>
-      <header className="mb-12 grid gap-6 sm:grid-cols-12 sm:items-end">
-        <div className="sm:col-span-4 space-y-2">
-          <p className="font-mono text-xs uppercase tracking-[0.2em] text-muted-foreground">
-            {index ? <span className="text-accent">§ {index}</span> : null} {index ? '— ' : null}{eyebrow}
-          </p>
-          <div className="rule" />
-        </div>
-        <div className="sm:col-span-8 space-y-3">
-          <h2 className="font-display text-3xl font-normal leading-[1.05] tracking-tightest text-foreground sm:text-5xl">
+    <section id={id} className={cn('scroll-mt-24', className)}>
+      <header className="relative isolate mb-12 space-y-4">
+        {index ? (
+          <span className="ghost-num" aria-hidden>
+            {index}
+          </span>
+        ) : null}
+        <p className="mono-label">
+          {index ? <span className="text-accent">№ {index}</span> : null} {index ? '— ' : null}
+          {eyebrow}
+        </p>
+        <div className="flex flex-wrap items-end gap-x-8 gap-y-4">
+          <h2 className="max-w-2xl font-display text-4xl font-semibold leading-[1.05] tracking-tight text-foreground sm:text-5xl">
             {title}
           </h2>
           {description ? (
-            <p className="max-w-2xl text-sm text-muted-foreground sm:text-base">{description}</p>
+            <span className="relative mb-1 inline-flex max-w-[15rem] -rotate-2 items-start gap-1">
+              <HandArrow className="mt-1 h-6 w-7 flex-shrink-0 scale-x-[-1] text-accent/70" />
+              <span className="scribble">{description}</span>
+            </span>
           ) : null}
         </div>
       </header>
