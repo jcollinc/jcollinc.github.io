@@ -10,7 +10,7 @@ export function SiteHeader() {
         <a href="#projects">Projects</a>
         <a href="#about">About</a>
         <a href="#writing">Writing</a>
-        <a href={links.resume}>Résumé <span aria-hidden="true">↗</span></a>
+        <a href={links.resume} target="_blank" rel="noreferrer">Resumé <span aria-hidden="true">↗</span></a>
       </nav>
       <div className="desktop-toolbar"><RestoreAll /><ThemeToggle /></div>
     </header>

@@ -19,7 +19,7 @@ const mono = IBM_Plex_Mono({
 });
 
 export const metadata: Metadata = {
-  metadataBase: new URL('https://jon-chinje.com'),
+  metadataBase: new URL('https://jcollinc.github.io'),
   title: 'Jon-Collin Chinje',
   robots: {
     index: false,

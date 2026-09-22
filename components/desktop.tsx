@@ -4,7 +4,7 @@ import { createContext, useCallback, useContext, useEffect, useLayoutEffect, use
 import { createPortal } from 'react-dom';
 import { ANCHOR_WINDOWS, createDesktop, desktopReducer, WINDOW_IDS, WINDOW_LABELS, windowSpan, type DesktopAction, type DesktopState, type WindowId } from '@/lib/desktop';
 
-type FocusRequest = { selector: string; scroll?: boolean };
+type FocusRequest = { selector: string; scroll?: boolean; focus?: boolean };
 type DesktopContextValue = {
   state: DesktopState;
   act: (action: DesktopAction, focus?: FocusRequest) => void;
@@ -66,7 +66,7 @@ export function Desktop({ children }: { children: ReactNode }) {
     if (!target) return;
     const frame = requestAnimationFrame(() => {
       const node = document.querySelector<HTMLElement>(target.selector);
-      node?.focus({ preventScroll: true });
+      if (target.focus !== false) node?.focus({ preventScroll: true });
       if (target.scroll) node?.scrollIntoView({ block: 'nearest', behavior: 'instant' });
     });
     return () => cancelAnimationFrame(frame);
@@ -79,19 +79,22 @@ export function Desktop({ children }: { children: ReactNode }) {
     return () => { document.body.style.overflow = overflow; };
   }, [maximized]);
 
-  const navigate = useCallback((hash: string) => {
+  const navigate = useCallback((hash: string, focus = true) => {
     const target = hash.slice(1);
     const ids = ANCHOR_WINDOWS[target];
     if (!ids) return false;
     const selector = target === 'projects' || target === 'experience' ? `#${target} .section-heading` : `#${target}`;
-    act({ type: 'navigate', ids }, { selector, scroll: true });
+    act({ type: 'navigate', ids }, { selector, scroll: true, focus });
     return true;
   }, [act]);
 
   useEffect(() => {
     const restoreAnchor = () => { if (window.location.hash) navigate(window.location.hash); };
-    // Defer the initial deep link until hydration has made the windows interactive.
-    const frame = requestAnimationFrame(restoreAnchor);
+    // Restore an initial deep link without giving its heading a focus outline.
+    // Later navigation still moves focus for keyboard and screen-reader users.
+    const frame = requestAnimationFrame(() => {
+      if (window.location.hash) navigate(window.location.hash, false);
+    });
     window.addEventListener('hashchange', restoreAnchor);
     return () => {
       cancelAnimationFrame(frame);
@@ -158,8 +161,8 @@ export function DesktopGroup({ id, windows, title, description, children, aside 
   );
 }
 
-export function WindowPanel({ id, title, titleAs: Heading = 'h2', className = '', children, as: Frame = 'section' }: {
-  id: WindowId; title: ReactNode; titleAs?: 'p' | 'h2' | 'h3'; className?: string; children: ReactNode; as?: 'section' | 'article' | 'footer';
+export function WindowPanel({ id, title, titleAs: Heading = 'h2', className = '', children, expandedContent, as: Frame = 'section' }: {
+  id: WindowId; title: ReactNode; titleAs?: 'p' | 'h2' | 'h3'; className?: string; children: ReactNode; expandedContent?: ReactNode; as?: 'section' | 'article' | 'footer';
 }) {
   const { state, act } = useDesktop();
   const current = state[id];
@@ -210,7 +213,7 @@ export function WindowPanel({ id, title, titleAs: Heading = 'h2', className = ''
         <button type="button" className="window-close" aria-label={`Close ${label}`} title="Close" onClick={() => act({ type: 'close', id }, { selector: `[data-shortcut="${id}"]`, scroll: true })}><span className="control-close" aria-hidden="true" /></button>
       </div>
     </header>
-    <div className="window-body">{children}</div>
+    <div className="window-body">{children}{isMaximized && expandedContent}</div>
   </Frame>;
 
   if (!isMaximized) return panel;

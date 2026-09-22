@@ -2,6 +2,7 @@ import Image from 'next/image';
 import { ArrowUpRight } from 'lucide-react';
 import type { ComponentProps } from 'react';
 import { WindowPanel } from '@/components/desktop';
+import { WindowDetails } from '@/components/window-details';
 
 interface ProjectCardProps {
   windowId: 'paytogether' | 'myfpl';
@@ -21,7 +22,7 @@ export function ProjectCard({
   windowId, name, description, impact, tags, demo, demoLabel, code, googlePlay, appStore, image
 }: ProjectCardProps) {
   return (
-    <WindowPanel id={windowId} title={<a href={demo} target="_blank" rel="noreferrer">{name} <ArrowUpRight size={17} aria-hidden="true" /></a>} titleAs="h3" as="article" className="project">
+    <WindowPanel id={windowId} title={<a href={demo} target="_blank" rel="noreferrer">{name} <ArrowUpRight size={17} aria-hidden="true" /></a>} titleAs="h3" as="article" className="project" expandedContent={<WindowDetails id={windowId} />}>
       <div className="project-content">
         <a className="project-image" href={demo} target="_blank" rel="noreferrer" aria-label={`Visit ${name}`}>
           <Image

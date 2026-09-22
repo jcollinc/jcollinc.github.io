@@ -6,6 +6,7 @@ import { ProjectCard } from '@/components/project-card';
 import { WritingCard } from '@/components/writing-card';
 import { SiteHeader } from '@/components/site-header';
 import { SiteFooter } from '@/components/site-footer';
+import { WindowDetails } from '@/components/window-details';
 import { education, experience, projects, writing } from '@/content/site';
 
 export default function Home() {
@@ -29,14 +30,14 @@ export default function Home() {
           </DesktopGroup>
           <About />
           <DesktopGroup id="experience" windows={['experience', 'education']} title="Experience and education" description="A snapshot of experiences that have led me here, to this very moment.">
-            <WindowPanel id="experience" title="Experience" titleAs="h3" className="career-window">
+            <WindowPanel id="experience" title="Experience" titleAs="h3" className="career-window" expandedContent={<WindowDetails id="experience" />}>
               <Timeline items={experience.map((item) => ({ title: item.company, subtitle: item.role }))} />
             </WindowPanel>
-            <WindowPanel id="education" title="Education" titleAs="h3" className="career-window">
+            <WindowPanel id="education" title="Education" titleAs="h3" className="career-window" expandedContent={<WindowDetails id="education" />}>
               <Timeline items={education.map((item) => ({ title: item.institution, subtitle: item.program }))} />
             </WindowPanel>
           </DesktopGroup>
-          <WindowPanel id="writing" title="Notes on things I've found interesting" className="writing-window">
+          <WindowPanel id="writing" title="Notes on things I've found interesting" className="writing-window" expandedContent={<WindowDetails id="writing" />}>
             <p className="window-description">{"I don't write very often, but when I do..."}</p>
             <div className="writing-list">
               {writing.map((entry) => <WritingCard key={entry.url} {...entry} />)}

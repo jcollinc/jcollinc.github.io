@@ -83,7 +83,7 @@ export const projects = [
       'Bill-splitting and expense tracking app that makes managing group expenses simple.',
     impact:
       'Features smart settle-up suggestions, spending analytics, receipt scanning, and customizable themes to help groups stay on top of shared costs.',
-    tags: ['React', 'TypeScript', 'Next.js', 'PostgreSQL'],
+    tags: ['React', 'TypeScript', 'Next.js', 'Firestore'],
     demo: 'https://paytogether.io',
     demoLabel: 'Learn more',
     googlePlay: 'https://play.google.com/store/apps/details?id=app.paytogether',

@@ -5,6 +5,15 @@
   hero, section headings and subtext, biography, and project descriptions unless
   Jon asks for edits. Omit content only when the new structure warrants it.
 - The three-item hero list has been retired; do not restore or redistribute it.
+- Jon separately authorized a first draft of additional copy for all maximized
+  windows. Keep it in `content/window-details.ts`, visible only when maximized,
+  and mirrored in `drafts/maximized-windows.md` for review. Jon has since supplied
+  his own revisions and approved Experience unchanged. Preserve that wording,
+  including intentional grammar; bracketed notes are editing instructions only.
+  Jon approved publishing the complete revised version on September 22, 2026,
+  including the penny-allocation and myFPL report explanations. The footer title
+  stays "You maximized the footer".
+  This does not authorize rewriting the approved compact copy.
 - This is a reskin with approved light copy edits, not permission to add content,
   personal information, or contact methods. Preserve intentional omissions from
   the original rendered site. Data in unused fields, old drafts, or checkpoints

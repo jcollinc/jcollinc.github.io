@@ -4,11 +4,15 @@ The site should feel like meeting Jon: direct, curious, particular about details
 and pleased to show what he has made. The projects and his own words provide the
 personality. Visitors should quickly find the work, résumé, and existing social links.
 
-## Current baseline: refined Y2K desktop
+## Current baseline: Aqua desktop
 
-Jon selected the interactive desktop as the new baseline on September 22, 2026,
-and approved committing it on `explore/portfolio-y2k`. Continue future design
-iterations from this version. Production publication remains unapproved.
+Jon approved the Aqua desktop and revised maximized copy for publication on
+September 22, 2026. Continue future design iterations from this version.
+Publishing follows the existing `main` → GitHub Actions → `gh-pages` workflow
+at https://jcollinc.github.io/.
+
+The earlier interactive Y2K baseline is preserved in commit `2f19e62` on
+`explore/portfolio-y2k`.
 
 The earlier approved blue design is preserved exactly in commit `1c92700` on
 `checkpoint/portfolio-blue-2026-09-22`.
@@ -18,6 +22,39 @@ information. Keep the historical commit intact, but apply the email removals
 described below before restoring or publishing that design.
 
 ## Visual decisions
+
+### Published Aqua direction
+
+The Aqua design was developed on `explore/portfolio-aqua` from the saved desktop
+baseline `2f19e62`. It keeps the approved compact content and window behavior,
+with the theme preferences below and additional reading when maximized.
+
+- Silver title bars for every window in light mode and blueberry title bars for
+  every window in dark mode. This is CSS theme styling only; focus does not
+  change a title bar's color. The permanent toolbar and taskbar retain pearly
+  pinstriped chrome. Keyboard focus remains visibly outlined.
+- Rounded beveled frames, glossy controls, a segmented navigation bar, and a
+  softer blue desktop. Pinstripes belong only to the chrome, not the content.
+- Trebuchet MS for display type and Verdana for compact interface labels, with
+  the bundled IBM Plex Sans as fallback. Body text and mono details retain Plex.
+- The navbar spans the viewport width to match the taskbar and is flush with the
+  top at every breakpoint, including while scrolling. Jon approved changing its
+  link to "Resumé" to match the hero.
+- Both Resumé links open in a new tab, as Jon requested.
+- Restore all and the theme toggle share one control-height value: 38px on
+  desktop, 44px on mobile. Mobile navigation keeps all four links visible in a
+  separate row, with 44px tap targets and a single divider instead of the desktop
+  segmented frame. Keep the full name and utility controls together above it.
+- The light-theme chrome and button gloss carry into a quieter graphite dark
+  theme. Existing functional shortcut icons receive the same material finish.
+- Theme precedence is an explicit saved light/dark choice, then the browser's
+  preference, then dark when no usable preference signal is available. Automatic
+  preferences follow browser changes and are not saved as explicit choices.
+  Browsers can report light when no preference was actively chosen; respect
+  that signal. Preserve the existing `theme` storage key and support legacy
+  `system` values as automatic preferences.
+
+### Saved baseline
 
 - Silver-blue desktop background, pale document surfaces, blue links, and dark
   ink. The dark theme keeps the same hierarchy with graphite surfaces.
@@ -109,7 +146,8 @@ personal copy intact rather than rewriting them to satisfy a generic checklist.
 Check desktop and narrow mobile layouts in light and dark themes, keyboard
 focus, anchor navigation, and reduced-motion behavior. Check that built pages
 and client bundles do not expose the removed email address or email links.
-Keep this as a local design for review until publishing is explicitly approved.
+Publication of this version was explicitly approved on September 22, 2026.
+Future changes still require authorization through the repository workflow.
 
 ## Interactive desktop behavior
 
@@ -134,6 +172,8 @@ remains unchanged.
   its maximized size; a closed window reopens at normal size.
 - Navigation reopens its target panels, including direct hash links. Restore
   all brings back the original arrangement. Do not add dragging in this pass.
+- Initial hash restoration scrolls to its destination without taking focus.
+  Deliberate navigation still moves focus, retaining keyboard focus indicators.
 - Rearrangements use a brief transform animation, disabled for reduced motion.
   Content and links remain available without JavaScript; window controls hide.
 
@@ -141,3 +181,22 @@ Validate reducer transitions with `npm test`, then check the full interaction
 sequence in a real browser, including touch, keyboard, all-closed/all-minimized
 layouts, taskbar switches, and long maximized content. Preserve all approved
 copy and the intentional omissions documented above.
+
+## Maximized reading
+
+Jon authorized additional copy for all eight maximized windows. The normal
+desktop keeps its approved content. `content/window-details.ts` holds the new
+passages separately, and `WindowPanel` renders them only while maximized.
+Jon supplied revised wording for these passages and approved Experience unchanged.
+Jon's publication approval includes the penny-allocation and myFPL explanations.
+See `drafts/maximized-windows.md` for the same text in one place.
+
+Give each addition a purpose: product decisions and concrete examples in the
+projects, more personal context in About, working examples in Experience,
+the route into software in Education, and a brief aside in the footer.
+Use readable line lengths and the existing window styling. On larger screens,
+career lists sit beside their commentary; on narrow screens they stack.
+The footer's links settle below its short note. Keep contact details and
+location omitted. The requested largest-remainder citation in PayTogether is the
+only added external link; it appears only in the maximized passage. Italicize
+"ever" in the hero as Jon requested. Keep the footer title "You maximized the footer".
