@@ -1,4 +1,5 @@
 import Image from 'next/image';
+import { ArrowUpRight } from 'lucide-react';
 import { hero, meta } from '@/content/site';
 
 export function Hero() {
@@ -6,53 +7,29 @@ export function Hero() {
   const headlineText = hasTradeMark ? hero.headline.slice(0, -1) : hero.headline;
 
   return (
-    <section className="relative pt-8 sm:pt-14">
-      <div className="mb-10 flex items-center gap-4 font-mono text-xs uppercase tracking-[0.2em] text-muted-foreground">
-        <span>{meta.role}</span>
-        <span className="h-px flex-1 bg-foreground/15" />
-      </div>
-
-      <div className="grid gap-12 sm:grid-cols-12 sm:items-center">
-        <div className="sm:col-span-8">
-          <h1 className="font-display text-[clamp(2.25rem,5.5vw,4.5rem)] font-normal leading-[1.02] tracking-tightest text-foreground">
-            {headlineText}
-            {hasTradeMark && (
-              <span className="align-top font-mono text-base text-muted-foreground sm:text-xl">™</span>
-            )}
-          </h1>
-
-          <p className="mt-8 max-w-xl text-base leading-relaxed text-muted-foreground sm:text-lg">
-            {hero.subheadline}
-          </p>
-
-          <ul className="mt-8 max-w-xl space-y-3">
-            {hero.bullets.map((bullet) => (
-              <li key={bullet} className="flex items-start gap-3 text-sm text-foreground/85 sm:text-base">
-                <span className="mt-[0.65rem] h-px w-4 flex-shrink-0 bg-accent" />
-                <span>{bullet}</span>
-              </li>
-            ))}
-          </ul>
-
-        </div>
-
-        <div className="relative hidden sm:col-span-4 sm:block">
-          <div className="relative aspect-[4/5] overflow-hidden">
-            <div className="pointer-events-none absolute inset-0 z-10 bg-accent/10 mix-blend-multiply" aria-hidden />
-            <Image
-              src={hero.heroImage}
-              alt={`${meta.name}`}
-              fill
-              className="object-cover grayscale"
-              priority
-            />
-          </div>
-          <div className="absolute -bottom-3 left-0 right-0 flex items-center justify-between font-mono text-[10px] uppercase tracking-[0.2em] text-muted-foreground">
-            <span>fig. 01</span>
-            <span>— {meta.name.toLowerCase()}</span>
-          </div>
+    <section className="intro" aria-labelledby="intro-title">
+      <div className="intro-copy">
+        <p className="intro-role">{meta.role}</p>
+        <h1 id="intro-title">{headlineText}{hasTradeMark ? <sup className="intro-trademark">™</sup> : null}</h1>
+        <p className="intro-description">{hero.subheadline}</p>
+        <div className="intro-links">
+          <a className="text-link intro-link" href={hero.ctaPrimary.href}>
+            {hero.ctaPrimary.label} <ArrowUpRight size={18} aria-hidden="true" />
+          </a>
+          <a className="text-link intro-link" href={hero.ctaSecondary.href}>{hero.ctaSecondary.label}</a>
         </div>
       </div>
+      <figure className="intro-portrait">
+        <Image
+          src={hero.heroImage}
+          alt={meta.name}
+          width={360}
+          height={432}
+          sizes="(max-width: 639px) 136px, (max-width: 899px) 260px, 360px"
+          priority
+        />
+        <figcaption>{meta.name}</figcaption>
+      </figure>
     </section>
   );
 }

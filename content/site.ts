@@ -1,6 +1,5 @@
 export const meta = {
   name: 'Jon-Collin Chinje',
-  location: 'Queens, New York',
   role: 'Software Engineer',
   summary:
     'I build resilient, human-centered web experiences with a bias toward clarity, iteration, and long-term maintainability.'
@@ -19,11 +18,6 @@ export const hero = {
   subheadline:
     "I like building things and I like delighting folks",
   heroImage: '/images/jon-collin.jpeg',
-  bullets: [
-    'Built myFPL to win my work league (and to help others win theirs)',
-    'Built PayTogether because I wanted to',
-    'Will spend unreasonable amounts of time on a reasonable problem'
-  ],
   ctaPrimary: {
     label: 'Resumé',
     href: links.resume
@@ -131,7 +125,7 @@ export const writing = [
   },
   {
     title: 'A Useful Approach to Light / Dark Mode in your React App',
-    description: 'Designing theme systems with CSS custom properties and empathy.',
+    description: 'Designing theme systems with CSS custom properties.',
     date: 'April 21, 2022',
     url: 'https://medium.com/@j.chinje/a-useful-approach-to-light-dark-mode-in-your-react-app-6d08ab6c5b4'
   }
@@ -156,4 +150,3 @@ export const skills = {
     "Sweat the details so users don't have to"
   ]
 };
-
