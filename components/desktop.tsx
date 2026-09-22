@@ -4,7 +4,7 @@ import { createContext, useCallback, useContext, useEffect, useLayoutEffect, use
 import { createPortal } from 'react-dom';
 import { ANCHOR_WINDOWS, createDesktop, desktopReducer, WINDOW_IDS, WINDOW_LABELS, windowSpan, type DesktopAction, type DesktopState, type WindowId } from '@/lib/desktop';
 
-type FocusRequest = { selector: string; scroll?: boolean; focus?: boolean };
+type FocusRequest = { selector: string; scroll?: boolean; focus?: boolean; block?: ScrollLogicalPosition };
 type DesktopContextValue = {
   state: DesktopState;
   act: (action: DesktopAction, focus?: FocusRequest) => void;
@@ -32,7 +32,13 @@ export function Desktop({ children }: { children: ReactNode }) {
   const hasMinimized = WINDOW_IDS.some(id => state[id].status === 'minimized');
 
   const act = useCallback((action: DesktopAction, focus?: FocusRequest) => {
-    previous.current = document.querySelector('dialog[open]') || action.type === 'maximize' ? null : positions();
+    // Anchor jumps need settled positions, including when reopening hidden panels.
+    if (action.type === 'navigate') {
+      document.querySelectorAll('[data-reflow]').forEach(node => {
+        node.getAnimations().forEach(animation => animation.cancel());
+      });
+    }
+    previous.current = document.querySelector('dialog[open]') || action.type === 'maximize' || action.type === 'navigate' ? null : positions();
     focusRequest.current = focus;
     dispatch(action);
     if ('id' in action) {
@@ -41,6 +47,20 @@ export function Desktop({ children }: { children: ReactNode }) {
     } else {
       setAnnouncement(action.type === 'reset' ? 'All windows restored.' : `${action.ids.map(id => WINDOW_LABELS[id]).join(' and ')} opened.`);
     }
+  }, []);
+
+  useLayoutEffect(() => {
+    const header = document.querySelector('.site-header');
+    if (!header) return;
+    const root = document.documentElement;
+    const measure = () => root.style.setProperty('--site-header-height', `${header.getBoundingClientRect().height}px`);
+    measure();
+    const observer = new ResizeObserver(measure);
+    observer.observe(header);
+    return () => {
+      observer.disconnect();
+      root.style.removeProperty('--site-header-height');
+    };
   }, []);
 
   useLayoutEffect(() => {
@@ -67,7 +87,7 @@ export function Desktop({ children }: { children: ReactNode }) {
     const frame = requestAnimationFrame(() => {
       const node = document.querySelector<HTMLElement>(target.selector);
       if (target.focus !== false) node?.focus({ preventScroll: true });
-      if (target.scroll) node?.scrollIntoView({ block: 'nearest', behavior: 'instant' });
+      if (target.scroll) node?.scrollIntoView({ block: target.block ?? 'nearest', behavior: 'instant' });
     });
     return () => cancelAnimationFrame(frame);
   }, [state]);
@@ -84,7 +104,7 @@ export function Desktop({ children }: { children: ReactNode }) {
     const ids = ANCHOR_WINDOWS[target];
     if (!ids) return false;
     const selector = target === 'projects' || target === 'experience' ? `#${target} .section-heading` : `#${target}`;
-    act({ type: 'navigate', ids }, { selector, scroll: true, focus });
+    act({ type: 'navigate', ids }, { selector, scroll: true, focus, block: 'start' });
     return true;
   }, [act]);
 

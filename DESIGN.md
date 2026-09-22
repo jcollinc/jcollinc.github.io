@@ -11,13 +11,19 @@ September 22, 2026. Continue future design iterations from this version.
 Publishing follows the existing `main` → GitHub Actions → `gh-pages` workflow
 at https://jcollinc.github.io/.
 
-The earlier interactive Y2K baseline is preserved in commit `2f19e62` on
-`explore/portfolio-y2k`.
+The earlier interactive Y2K baseline is preserved in commit `2f19e62` at tag
+`archive/portfolio-y2k-2026-09-22`.
 
-The earlier approved blue design is preserved exactly in commit `1c92700` on
-`checkpoint/portfolio-blue-2026-09-22`.
+The earlier approved blue design is preserved exactly in commit `1c92700` at tag
+`archive/portfolio-blue-2026-09-22`.
 
-The checkpoint predates Jon's correction about intentionally omitted contact
+The first published Aqua version is saved at `archive/portfolio-aqua-2026-09-22`
+(`f575a5e`). The retired visual-overhaul exploration is saved at
+`archive/portfolio-visual-overhaul-2026-09-22` (`9c4ac14`). These tags replace the
+inactive exploration branches. To revisit a snapshot, create a new branch from
+its tag; keep the archived tag unchanged.
+
+The blue checkpoint predates Jon's correction about intentionally omitted contact
 information. Keep the historical commit intact, but apply the email removals
 described below before restoring or publishing that design.
 
@@ -172,6 +178,10 @@ remains unchanged.
   its maximized size; a closed window reopens at normal size.
 - Navigation reopens its target panels, including direct hash links. Restore
   all brings back the original arrangement. Do not add dragging in this pass.
+- Anchor navigation aligns the destination below the sticky navbar with a 12px
+  gap. Measure the navbar as its height changes across layouts. Use settled panel
+  positions for these jumps; ordinary window actions retain reflow animation and
+  scroll only as far as needed to reveal their destination.
 - Initial hash restoration scrolls to its destination without taking focus.
   Deliberate navigation still moves focus, retaining keyboard focus indicators.
 - Rearrangements use a brief transform animation, disabled for reduced motion.
