@@ -6,7 +6,6 @@ export const meta = {
 };
 
 export const links = {
-  email: 'j.chinje@gmail.com',
   github: 'https://github.com/jcollinc',
   linkedin: 'https://www.linkedin.com/in/jon-collin-chinje/',
   medium: 'https://medium.com/@j.chinje',
@@ -21,10 +20,6 @@ export const hero = {
   ctaPrimary: {
     label: 'Resumé',
     href: links.resume
-  },
-  ctaSecondary: {
-    label: 'Say hello',
-    href: 'mailto:j.chinje@gmail.com'
   }
 };
 

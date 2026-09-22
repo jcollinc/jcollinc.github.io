@@ -1,18 +1,9 @@
 import { links, meta } from '@/content/site';
-import { CopyEmail } from '@/components/copy-email';
+import { WindowPanel } from '@/components/desktop';
 
 export function SiteFooter() {
   return (
-    <footer className="site-footer page-width">
-      <div className="contact-row">
-        <div>
-          <h2>More to come!</h2>
-        </div>
-        <div className="contact-email">
-          <a className="text-link" href={`mailto:${links.email}`}>{links.email}</a>
-          <CopyEmail />
-        </div>
-      </div>
+    <WindowPanel id="footer" title="More to come!" as="footer" className="site-footer">
       <div className="footer-bottom">
         <p>© {new Date().getFullYear()} {meta.name}</p>
         <nav aria-label="Elsewhere on the web">
@@ -22,6 +13,6 @@ export function SiteFooter() {
         </nav>
         <a href="#top">Back to top ↑</a>
       </div>
-    </footer>
+    </WindowPanel>
   );
 }

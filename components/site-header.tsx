@@ -1,5 +1,6 @@
 import { ThemeToggle } from '@/components/theme-toggle';
 import { links, meta } from '@/content/site';
+import { RestoreAll } from '@/components/desktop';
 
 export function SiteHeader() {
   return (
@@ -11,7 +12,7 @@ export function SiteHeader() {
         <a href="#writing">Writing</a>
         <a href={links.resume}>Résumé <span aria-hidden="true">↗</span></a>
       </nav>
-      <ThemeToggle />
+      <div className="desktop-toolbar"><RestoreAll /><ThemeToggle /></div>
     </header>
   );
 }
