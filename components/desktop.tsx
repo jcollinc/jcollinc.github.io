@@ -211,9 +211,8 @@ export function WindowPanel({ id, title, titleAs: Heading = 'h2', className = ''
     const open = () => act({ type: 'open', ids: [id] }, { selector: `[data-window="${id}"]`, scroll: true });
     return <button
       type="button" className="desktop-shortcut" data-shortcut={id} data-reflow={`shortcut-${id}`}
-      aria-label={`Open ${label}`} title={`Double-click to open ${label}`} style={style}
-      onDoubleClick={open} onClick={event => { if (event.detail === 0) open(); }}
-      onPointerUp={event => { if (event.pointerType !== 'mouse') open(); }}
+      aria-label={`Open ${label}`} title={`Open ${label}`} style={style}
+      onClick={open}
     ><WindowIcon id={id} /><span>{label}</span></button>;
   }
 

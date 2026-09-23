@@ -3,6 +3,7 @@ import { Desktop, DesktopGroup, WindowPanel } from '@/components/desktop';
 import { About } from '@/components/about';
 import { Timeline } from '@/components/timeline';
 import { ProjectCard } from '@/components/project-card';
+import { StudioCard } from '@/components/studio-card';
 import { WritingCard } from '@/components/writing-card';
 import { SiteHeader } from '@/components/site-header';
 import { SiteFooter } from '@/components/site-footer';
@@ -20,13 +21,9 @@ export default function Home() {
         <SiteHeader />
         <main id="main" className="page-width desktop-layout" tabIndex={-1}>
           <Hero />
-          <DesktopGroup id="projects" windows={['paytogether', 'myfpl']} title="Projects I don't mind sharing" description="Not all of them, alas!" aside={studio ? (
-              <aside className="studio-note" aria-label="My studio">
-                <a className="text-link" href={studio.demo} target="_blank" rel="noreferrer">{studio.name} <span aria-hidden="true">↗</span></a>
-                <p>{studio.description}</p>
-              </aside>
-            ) : null}>
+          <DesktopGroup id="projects" windows={['paytogether', 'myfpl', 'majalabs']} title="Projects I don't mind sharing" description="Not all of them, alas!">
             {applications.map((project) => <ProjectCard key={project.name} windowId={project.name === 'PayTogether' ? 'paytogether' : 'myfpl'} {...project} />)}
+            {studio ? <StudioCard description={studio.description} href={studio.demo} /> : null}
           </DesktopGroup>
           <About />
           <DesktopGroup id="experience" windows={['experience', 'education']} title="Experience and education" description="A snapshot of experiences that have led me here, to this very moment.">

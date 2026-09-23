@@ -1,0 +1,5 @@
+# This one is to help me win my work league (and help you win yours)
+
+Fantasy football gives you plenty to think about before a deadline, and plenty of time to regret all your decisions afterward. A good player isn't automatically a good transfer for your team. There's your budget, the players you already have, the fixtures coming up, and whether making a move is worth the cost at all. myFPL uses a shared player-scoring model for its lineup, captain, and transfer suggestions, then accounts for the different constraints of each decision. Sometimes keeping the player you have is a perfectly reasonable answer.
+
+All of that said, the most complete data in the world couldn’t tell you, oh, that Manchester United will lose 2-0 to a newly promoted Hull City side in their season opener, with Bruno Fernandes, one of last season’s top scorers, registering a measly 2 points (for example). Therefore, the goal is not to help you top the global leaderboard, but rather to do better on average than you would have without the app.

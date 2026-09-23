@@ -158,8 +158,8 @@ Future changes still require authorization through the repository workflow.
 ## Interactive desktop behavior
 
 Jon approved working minimize, maximize, and close controls for all content
-panels, including the footer. The eight windows are Introduction, PayTogether,
-myFPL, About, Experience, Education, Writing, and More to come! The header is
+panels, including the footer. The nine windows are Introduction, PayTogether,
+myFPL, MajaLabs, About, Experience, Education, Writing, and More to come! The header is
 the permanent toolbar. The pre-window Y2K source and export are preserved
 locally at `/tmp/portfolio-before-windows-20260922`; the blue Git checkpoint
 remains unchanged.
@@ -167,10 +167,12 @@ remains unchanged.
 - Start every visit with all windows open. Do not persist hidden content.
 - Minimize removes the panel from the layout and adds a restore button to the
   bottom taskbar. Only show the taskbar while a window is minimized.
-- Close replaces the panel with a named shortcut. Double-click opens it on a
-  mouse; a single tap, Enter, or Space opens it with touch or a keyboard.
+- Close replaces the panel with a named shortcut. A single click, tap, Enter,
+  or Space opens it again.
+- MajaLabs has a slim, full-width wordmark window beneath the two app windows,
+  using its existing description and website link.
 - Remaining paired windows expand around a shortcut or fill the space left by
-  a minimized sibling. Section labels and studio text collapse when every
+  a minimized sibling. Section labels collapse when every
   window in their group is hidden; closing everything leaves only shortcuts.
 - Maximize uses a native modal dialog with a scrollable content area, keyboard
   focus containment, and Escape to restore. Keep the minimized-window taskbar
@@ -195,11 +197,13 @@ copy and the intentional omissions documented above.
 ## Maximized reading
 
 Jon authorized additional copy for all eight maximized windows. The normal
-desktop keeps its approved content. `content/window-details.ts` holds the new
+desktop keeps its approved content. `content/windows/*.md` holds the new
 passages separately, and `WindowPanel` renders them only while maximized.
 Jon supplied revised wording for these passages and approved Experience unchanged.
 Jon's publication approval includes the penny-allocation and myFPL explanations.
-See `drafts/maximized-windows.md` for the same text in one place.
+Each window has one Markdown file: the first `# Heading` is its expanded title,
+and blank lines separate paragraphs. Links use `[text](url)` and italics use
+`*text*`. These files are the single source for both editing and review.
 
 Give each addition a purpose: product decisions and concrete examples in the
 projects, more personal context in About, working examples in Experience,
@@ -208,5 +212,6 @@ Use readable line lengths and the existing window styling. On larger screens,
 career lists sit beside their commentary; on narrow screens they stack.
 The footer's links settle below its short note. Keep contact details and
 location omitted. The requested largest-remainder citation in PayTogether is the
-only added external link; it appears only in the maximized passage. Italicize
-"ever" in the hero as Jon requested. Keep the footer title "You maximized the footer".
+only added external link; it appears only in the maximized passage. Jon later
+shortened several passages directly in the Markdown files; preserve those edits.
+Keep the footer title "You maximized the footer".

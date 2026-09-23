@@ -1,4 +1,4 @@
-export const WINDOW_IDS = ['intro', 'paytogether', 'myfpl', 'about', 'experience', 'education', 'writing', 'footer'] as const;
+export const WINDOW_IDS = ['intro', 'paytogether', 'myfpl', 'majalabs', 'about', 'experience', 'education', 'writing', 'footer'] as const;
 export type WindowId = typeof WINDOW_IDS[number];
 export type WindowState = { status: 'open' | 'minimized' | 'closed'; maximized: boolean };
 export type DesktopState = Record<WindowId, WindowState>;
@@ -8,13 +8,13 @@ export type DesktopAction =
   | { type: 'reset' };
 
 export const WINDOW_LABELS: Record<WindowId, string> = {
-  intro: 'Introduction', paytogether: 'PayTogether', myfpl: 'myFPL', about: 'About',
+  intro: 'Introduction', paytogether: 'PayTogether', myfpl: 'myFPL', majalabs: 'MajaLabs', about: 'About',
   experience: 'Experience', education: 'Education', writing: 'Writing', footer: 'More to come!'
 };
 
 export const WINDOW_GROUPS: WindowId[][] = [['paytogether', 'myfpl'], ['experience', 'education']];
 export const ANCHOR_WINDOWS: Record<string, WindowId[]> = {
-  top: ['intro'], intro: ['intro'], projects: ['paytogether', 'myfpl'], about: ['about'],
+  top: ['intro'], intro: ['intro'], projects: ['paytogether', 'myfpl', 'majalabs'], majalabs: ['majalabs'], about: ['about'],
   experience: ['experience', 'education'], education: ['education'], writing: ['writing'], footer: ['footer']
 };
 

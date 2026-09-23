@@ -6,8 +6,9 @@
   Jon asks for edits. Omit content only when the new structure warrants it.
 - The three-item hero list has been retired; do not restore or redistribute it.
 - Jon separately authorized a first draft of additional copy for all maximized
-  windows. Keep it in `content/window-details.ts`, visible only when maximized,
-  and mirrored in `drafts/maximized-windows.md` for review. Jon has since supplied
+  windows. Keep it in `content/windows/*.md`, visible only when maximized.
+  These Markdown files are the single source for editing and review; do not
+  maintain duplicate copy in a TypeScript object or draft. Jon has since supplied
   his own revisions and approved Experience unchanged. Preserve that wording,
   including intentional grammar; bracketed notes are editing instructions only.
   Jon approved publishing the complete revised version on September 22, 2026,

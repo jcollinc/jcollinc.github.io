@@ -1,21 +1,17 @@
-import { windowDetails } from '@/content/window-details';
-import type { WindowId } from '@/lib/desktop';
+import Markdown from 'react-markdown';
+import { readWindowCopy, type ExpandedWindowId } from '@/lib/window-copy';
 
-export function WindowDetails({ id }: { id: WindowId }) {
-  const { heading, paragraphs } = windowDetails[id];
+export function WindowDetails({ id }: { id: ExpandedWindowId }) {
+  const { heading, body } = readWindowCopy(id);
   return (
     <section className="window-details" aria-labelledby={`${id}-details-title`}>
       <h2 id={`${id}-details-title`}>{heading}</h2>
       <div className="window-details-copy">
-        {paragraphs.map((paragraph, paragraphIndex) => (
-          <p key={paragraphIndex}>
-            {typeof paragraph === 'string' ? paragraph : paragraph.map((part, partIndex) => {
-              if (typeof part === 'string') return part;
-              if ('emphasis' in part) return <em key={partIndex}>{part.emphasis}</em>;
-              return <a key={partIndex} href={part.href} target="_blank" rel="noreferrer">{part.text}</a>;
-            })}
-          </p>
-        ))}
+        <Markdown components={{
+          a: ({ href, children, title }) => <a href={href} title={title} target="_blank" rel="noreferrer">{children}</a>
+        }}>
+          {body}
+        </Markdown>
       </div>
     </section>
   );
