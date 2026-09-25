@@ -73,7 +73,7 @@ export const projects = [
     impact:
       'A home for thoughtfully crafted software, unifying my ventures under a shared commitment to design quality and engineering rigor.',
     tags: ['Next.js', 'React', 'Tailwind CSS'],
-    demo: 'https://majalabs.net',
+    demo: 'https://majalabs.net/?r=s853px',
     demoLabel: 'Visit site',
     image: '/projects/majalabs.png'
   },
@@ -84,7 +84,7 @@ export const projects = [
     impact:
       'Features smart settle-up suggestions, spending analytics, receipt scanning, and customizable themes to help groups stay on top of shared costs.',
     tags: ['React', 'TypeScript', 'Next.js', 'Firestore'],
-    demo: 'https://paytogether.io',
+    demo: 'https://paytogether.io/?utm_source=portfolio',
     demoLabel: 'Learn more',
     googlePlay: 'https://play.google.com/store/apps/details?id=app.paytogether',
     appStore: 'https://apps.apple.com/us/app/paytogether-split-expenses/id6759358041',
@@ -97,7 +97,7 @@ export const projects = [
     impact:
       'Features live effective points calculation, algorithmic transfer recommendations, and personalized weekly AI analysis reports to help managers rank higher.',
     tags: ['Next.js', 'Supabase', 'OpenAI', 'Stripe'],
-    demo: 'https://myfpl.co',
+    demo: 'https://myfpl.co/?utm_source=portfolio',
     demoLabel: 'Learn more',
     googlePlay: 'https://play.google.com/store/apps/details?id=com.myfpl.app',
     appStore: 'https://apps.apple.com/us/app/myfpl-fpl-companion/id6759417457',
